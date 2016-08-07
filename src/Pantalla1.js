@@ -9,10 +9,11 @@ import aluminiumImg from'./img/aluminium.jpg';
 class Pantalla1 extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      cosas: props.initialCount,
-      cantidadCambios: 0
-    };
+    this.handlePanelClick = this.handlePanelClick.bind(this);
+  }
+  handlePanelClick(material) {
+    this.props.onMaterialSelected(material);
+    console.log('Material seleccionado:' + material);
   }
   render() {
     return (
@@ -20,9 +21,9 @@ class Pantalla1 extends Component {
         <h1>Crea tu cuadro</h1>
         <hr/>
         <h3>Para comenzar, selecciona un material</h3>
-        <PanelMaterial imgSrc={canvasImg} nombre="Lienzo" descripcion="Lienzo de alta calidad."/>
-        <PanelMaterial imgSrc={glassImg} nombre="Acrílico" descripcion="Acrílico de alta calidad."/>
-        <PanelMaterial imgSrc={aluminiumImg} nombre="Aluminio" descripcion="Aluminio de alta calidad."/>
+        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'lienzo')} imgSrc={canvasImg} material="lienzo" descripcion="Lienzo de alta calidad."/>
+        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'acrílico')} imgSrc={glassImg} material="acrílico" descripcion="Acrílico de alta calidad."/>
+        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'aluminio')} imgSrc={aluminiumImg} material="aluminio" descripcion="Aluminio de alta calidad."/>
       </div>
     );
   }

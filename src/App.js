@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Pantalla1 from './Pantalla1.js';
+import Pantalla2 from './Pantalla2.js';
 
 
 class App extends Component {
@@ -11,11 +11,26 @@ class App extends Component {
     this.state = {
       pantalla: 1
     };
+    this.handleIrAPantalla = this.handleIrAPantalla.bind(this);
+    this.handleMaterialSelected = this.handleMaterialSelected.bind(this);
+  }
+  handleIrAPantalla(numero) {
+    this.setState({pantalla: numero});
+  }
+  handleMaterialSelected(material) {
+    this.setState({material: material, pantalla: 2});
   }
   render() {
+    var pantallas =
+    [
+      <Pantalla1 onMaterialSelected={this.handleMaterialSelected}/>,
+      <Pantalla2 material={this.state.material} />
+    ];
+
     return (
       <div className="App">
-        <Pantalla1 />
+        Pantalla numero {this.state.pantalla}
+        {pantallas[this.state.pantalla - 1]}
       </div>
     );
   }
