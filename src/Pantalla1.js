@@ -21,9 +21,9 @@ class Pantalla1 extends Component {
         <h1>Crea tu cuadro</h1>
         <hr/>
         <h3>Para comenzar, selecciona un material</h3>
-        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'lienzo')} imgSrc={canvasImg} material="lienzo" descripcion="Lienzo de alta calidad."/>
-        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'acrílico')} imgSrc={glassImg} material="acrílico" descripcion="Acrílico de alta calidad."/>
-        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'aluminio')} imgSrc={aluminiumImg} material="aluminio" descripcion="Aluminio de alta calidad."/>
+        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Lienzo')} imgSrc={canvasImg} material="Lienzo" descripcion="Lienzo de alta calidad."/>
+        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Acrílico')} imgSrc={glassImg} material="Acrílico" descripcion="Acrílico de alta calidad."/>
+        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Aluminio')} imgSrc={aluminiumImg} material="Aluminio" descripcion="Aluminio de alta calidad."/>
       </div>
     );
   }
