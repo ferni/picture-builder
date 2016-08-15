@@ -1,0 +1,12 @@
+.Dropdown .flechita{
+  background-color: blue;
+  color: white;
+  width: 70px;
+  height: 100%;
+  float: right;
+}
+
+.Dropdown {
+  height: 70px;
+  border: 1px solid gray;
+}
