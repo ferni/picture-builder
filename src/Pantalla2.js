@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import CuadroPreview from './CuadroPreview.js';
+import BotonEstilo from './BotonEstilo.js';
 
 import './Pantalla2.css';
 
 var styles = {
   singlePrint: 'Single print',
   splitImage: 'Split image',
-  wallDisplayes: 'Wall displays',
+  wallDisplays: 'Wall displays',
   collages: 'Collages'
 };
 
@@ -29,11 +30,24 @@ class Pantalla2 extends Component {
   render() {
     return (
       <div className="Pantalla2">
-        <div class="panel-mitad">
+        <div className="panel-mitad">
           <h3>{this.props.material} {this.state.style}: {this.state.shape} {this.state.size}</h3>
           <CuadroPreview config={this.getConfigCuadro()}/>
         </div>
-        <div class="panel-mitad">
+        <div className="panel-mitad">
+          <h3>1. Elije el estilo</h3>
+          <hr/>
+          <div>
+            <BotonEstilo nombre={styles.singlePrint} precioMinimo={14}/>
+            <BotonEstilo nombre={styles.splitImage} precioMinimo={16}/>
+            <BotonEstilo nombre={styles.wallDisplays} precioMinimo={18}/>
+            <BotonEstilo nombre={styles.collages} precioMinimo={134}/>
+          </div><br />
+
+          <h3>2. Elije la forma</h3>
+          <hr/>
+          <h3>3. Elije el tamaño</h3>
+          <hr/>
 
         </div>
       </div>

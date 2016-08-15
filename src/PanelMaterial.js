@@ -12,7 +12,7 @@ class PanelMaterial extends Component {
   render() {
     var material = capitalize(this.props.material);
     return (
-      <div className="PanelMaterial" >
+      <div className="PanelMaterial seleccionable" >
         <div onClick={this.props.onClick}>
           <img src={this.props.imgSrc} alt={'Seleccionar ' + material}/>
           <h4>{material}</h4>
