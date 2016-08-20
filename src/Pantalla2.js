@@ -3,6 +3,7 @@ import CuadroPreview from './CuadroPreview.js';
 import BotonEstilo from './BotonEstilo.js';
 import Dropdown from './Dropdown.js';
 import SizeAndShape from './dropdown-contents/SizeAndShape.js';
+import Size from './dropdown-contents/Size.js';
 
 import './Pantalla2.css';
 
@@ -56,6 +57,10 @@ class Pantalla2 extends Component {
           </Dropdown>
           <h3>3. Elije el tamaño</h3>
           <hr/>
+          <Dropdown>
+            <Size tamaño="30 x 45" precio={170}
+              promoPorc={70} promoAhorro={396.9}/>
+          </Dropdown>
         </div>
       );
     }
