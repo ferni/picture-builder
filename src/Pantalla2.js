@@ -4,6 +4,7 @@ import BotonEstilo from './BotonEstilo.js';
 import Dropdown from './Dropdown.js';
 import SizeAndShape from './dropdown-contents/SizeAndShape.js';
 import Size from './dropdown-contents/Size.js';
+import Shape from './dropdown-contents/Shape.js';
 
 import './Pantalla2.css';
 
@@ -53,7 +54,7 @@ class Pantalla2 extends Component {
           <h3>2. Elije la forma</h3>
           <hr/>
           <Dropdown>
-            <span>stuff del dropdown</span>
+            <Shape imgSrc="tu-hermana" nombre="asdf"/>
           </Dropdown>
           <h3>3. Elije el tamaño</h3>
           <hr/>

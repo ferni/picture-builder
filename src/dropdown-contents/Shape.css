@@ -1,0 +1,13 @@
+.Shape {
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+.Shape img {
+  float:left;
+}
+
+.Shape .nombre {
+  float: left;
+  margin-left: 30px;
+}
