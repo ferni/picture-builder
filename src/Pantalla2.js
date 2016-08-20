@@ -5,6 +5,8 @@ import Dropdown from './Dropdown.js';
 import SizeAndShape from './dropdown-contents/SizeAndShape.js';
 import Size from './dropdown-contents/Size.js';
 import Shape from './dropdown-contents/Shape.js';
+import BackBtn from './BackBtn.js';
+import ForwardBtn from './ForwardBtn.js';
 
 import './Pantalla2.css';
 
@@ -81,7 +83,10 @@ class Pantalla2 extends Component {
             <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.collages)} nombre={styles.collages} precioMinimo={134}/>
           </div><br />
           {sizeAndShape}
-
+          <div className="navigation-buttons">
+            <BackBtn desc="Cambiar material" />
+            <ForwardBtn desc="Subir una foto" />
+          </div>
         </div>
       </div>
     );
