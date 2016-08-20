@@ -1,7 +1,7 @@
 .Dropdown {
-  height: 70px;
   border: 1px solid gray;
   position: relative;
+  min-height: 60px;
 }
 
 .Dropdown .flechita{

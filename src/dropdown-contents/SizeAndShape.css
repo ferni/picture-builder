@@ -1,3 +1,7 @@
+.SizeAndShape {
+  height: 70px;
+}
+
 .SizeAndShape div {
   display: inline;
   float: left;
