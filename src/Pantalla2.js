@@ -68,7 +68,7 @@ class Pantalla2 extends Component {
         <div className="panel-mitad">
           <h3>1. Elije el estilo</h3>
           <hr/>
-          <div>
+          <div className="estilos">
             <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.singlePrint)} nombre={styles.singlePrint} precioMinimo={14}/>
             <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.splitImage)} nombre={styles.splitImage} precioMinimo={16}/>
             <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.wallDisplays)} nombre={styles.wallDisplays} precioMinimo={18}/>
