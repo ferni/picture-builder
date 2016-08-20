@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CuadroPreview from './CuadroPreview.js';
 import BotonEstilo from './BotonEstilo.js';
 import Dropdown from './Dropdown.js';
+import SizeAndShape from './dropdown-contents/SizeAndShape.js';
 
 import './Pantalla2.css';
 
@@ -40,7 +41,8 @@ class Pantalla2 extends Component {
           <h3>2. Elije forma y tamaño</h3>
           <hr/>
           <Dropdown>
-            <span>forma y tamaño</span>
+            <SizeAndShape imgSrc="tu-vieja" tamaño="30 x 45" precio={170}
+              promoPorc={70} promoAhorro={396.9}/>
           </Dropdown>
         </div>
       );

@@ -1,0 +1,30 @@
+.SizeAndShape div {
+  display: inline;
+  float: left;
+
+}
+
+.SizeAndShape .img {
+  width: 70px;
+}
+
+.SizeAndShape .tamaño-y-precio {
+  width: 155px;
+}
+
+.SizeAndShape .precio {
+  color: #0F71B8;
+  font-size: 35px;
+}
+
+.SizeAndShape .tamaño {
+  font-size: small;
+}
+
+.SizeAndShape .promo {
+  font-size: small;
+  width: 120px;
+  padding: 10px;
+  padding-top: 18px;
+  line-height: 20px;
+}
