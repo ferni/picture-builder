@@ -3,6 +3,7 @@ import './App.css';
 
 import Pantalla1 from './Pantalla1.js';
 import Pantalla2 from './Pantalla2.js';
+import Pantalla3 from './Pantalla3.js';
 
 
 class App extends Component {
@@ -27,7 +28,8 @@ class App extends Component {
     var pantallas =
     [
       <Pantalla1 onMaterialSelected={this.handleMaterialSelected}/>,
-      <Pantalla2 material={this.state.material} onGoTo={this.handleIrAPantalla}/>
+      <Pantalla2 material={this.state.material} onGoTo={this.handleIrAPantalla}/>,
+      <Pantalla3 onGoTo={this.handleIrAPantalla}/>
     ];
 
     return (
