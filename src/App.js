@@ -29,7 +29,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        Pantalla numero {this.state.pantalla}
         {pantallas[this.state.pantalla - 1]}
       </div>
     );

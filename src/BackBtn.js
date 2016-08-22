@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-// import './BackBtn.css';
+import './NavBtn.css';
 
  class BackBtn extends Component {
    render() {
      return (
-       <div className="BackBtn">
+       <div className="BackBtn NavBtn seleccionable">
         <div className="flechita-atras"> &lt; </div>
         <div className="texto">
-          <h3>Volver</h3>
+          <strong>Volver</strong><br/>
           <span className="descripcion">{this.props.desc}</span>
         </div>
        </div>

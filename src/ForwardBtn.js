@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-// import './ForwardBtn.css';
+import './NavBtn.css';
 
  class ForwardBtn extends Component {
    render() {
      return (
-       <div className="ForwardBtn">
+       <div className="ForwardBtn NavBtn seleccionable">
         <img src={this.props.imgSrc} role="presentation" />
         <div className="texto">
-          <h3>Continuar</h3>
+          <strong>Continuar</strong><br/>
           <span className="descripcion">{this.props.desc}</span>
         </div>
         <div className="flechita-adelante"> &gt; </div>

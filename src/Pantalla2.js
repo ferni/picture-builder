@@ -42,7 +42,7 @@ class Pantalla2 extends Component {
     if (this.state.style !== styles.collages) {
       sizeAndShape = (
         <div>
-          <h3>2. Elije forma y tamaño</h3>
+          <h4>2. Elije forma y tamaño</h4>
           <hr/>
           <Dropdown>
             <SizeAndShape imgSrc="tu-vieja" tamaño="30 x 45" precio={170}
@@ -53,12 +53,12 @@ class Pantalla2 extends Component {
     } else {
       sizeAndShape = (
         <div>
-          <h3>2. Elije la forma</h3>
+          <h4>2. Elije la forma</h4>
           <hr/>
           <Dropdown>
             <Shape imgSrc="tu-hermana" nombre="asdf"/>
           </Dropdown>
-          <h3>3. Elije el tamaño</h3>
+          <h4>3. Elije el tamaño</h4>
           <hr/>
           <Dropdown>
             <Size tamaño="30 x 45" precio={170}
@@ -74,7 +74,7 @@ class Pantalla2 extends Component {
           <CuadroPreview config={this.getConfigCuadro()}/>
         </div>
         <div className="panel-mitad">
-          <h3>1. Elije el estilo</h3>
+          <h4>1. Elije el estilo</h4>
           <hr/>
           <div className="estilos">
             <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.singlePrint)} nombre={styles.singlePrint} precioMinimo={14}/>

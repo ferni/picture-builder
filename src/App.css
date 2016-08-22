@@ -2,6 +2,8 @@
   text-align: center;
   width: 940px;
   height: 507px;
+  background-color: whitesmoke;
+  position: relative;
 }
 
 .App-logo {
@@ -34,6 +36,6 @@
   position: absolute;
   bottom: 5px;
   right: 10px;
-  width: 100%;
+  width: 470px;
   height: 80px;
 }

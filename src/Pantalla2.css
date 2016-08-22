@@ -1,8 +1,13 @@
 .panel-mitad {
-  width: 45%;
+  width: 470px;
   float: left;
 }
 
 .estilos {
   height: 110px;
+}
+
+.Pantalla2 h4 {
+  margin: 5px;
+  text-align: left;
 }
