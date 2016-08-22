@@ -18,13 +18,16 @@ class App extends Component {
     this.setState({pantalla: numero});
   }
   handleMaterialSelected(material) {
-    this.setState({material: material, pantalla: 2});
+    this.setState({
+      material: material,
+      pantalla: 2
+    });
   }
   render() {
     var pantallas =
     [
       <Pantalla1 onMaterialSelected={this.handleMaterialSelected}/>,
-      <Pantalla2 material={this.state.material} />
+      <Pantalla2 material={this.state.material} onGoTo={this.handleIrAPantalla}/>
     ];
 
     return (

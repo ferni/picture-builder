@@ -84,8 +84,8 @@ class Pantalla2 extends Component {
           </div><br />
           {sizeAndShape}
           <div className="navigation-buttons">
-            <BackBtn desc="Cambiar material" />
-            <ForwardBtn desc="Subir una foto" />
+            <BackBtn desc="Cambiar material" onClick={this.props.onGoTo.bind(null, 1)}/>
+            <ForwardBtn desc="Subir una foto" onClick={this.props.onGoTo.bind(null, 3)}/>
           </div>
         </div>
       </div>
