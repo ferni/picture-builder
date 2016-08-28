@@ -14,7 +14,7 @@ class PanelMaterial extends Component {
   render() {
     var material = capitalize(this.props.material);
     return (
-      <Paper className="PanelMaterial seleccionable" onTouchTap={this.props.onClick}>
+      <Paper className="PanelMaterial seleccionable" onTouchTap={this.props.onClick} zDepth="2">
         <EnhancedButton className="EnhancedButton">
 
               <img src={this.props.imgSrc} alt={'Seleccionar ' + material}/>
