@@ -20,7 +20,7 @@
   background: -moz-linear-gradient(top, #ffffff, #f8f8f8);
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#ffffff), to(#f8f8f8));
   background: -o-linear-gradient(top, #ffffff, #f8f8f8);
-  box-shadow: 0 0 2px #3498db;
+  box-shadow: 0 0 2px #5BBFCB;
 }
 
 .navigation-buttons {
