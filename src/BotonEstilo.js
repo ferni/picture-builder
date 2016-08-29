@@ -6,8 +6,8 @@ class BotonEstilo extends Component {
     return (
       <div className="BotonEstilo seleccionable"  onClick={this.props.onClick}>
           <img src={this.props.imgSrc} alt={this.props.descripcion}/><br/>
-          <span>{this.props.nombre}</span><br/>
-          <span>Desde ${this.props.precioMinimo}</span>
+          <h3>{this.props.nombre}</h3>
+          <p>Desde ${this.props.precioMinimo}</p>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 .BotonEstilo {
-  width: 100px;
-  height: 100px;
+  width: 105px;
+  height: 120px;
   padding: 5px;
   float: left;
   margin-right: 3px;
@@ -10,4 +10,21 @@
 .BotonEstilo img {
   width: 80px;
   height: 57px;
+}
+
+.BotonEstilo h3 {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+  white-space: normal;
+  margin-top: 12px;
+  margin-bottom: 3px;
+}
+
+.BotonEstilo p {
+  color: #999;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
 }

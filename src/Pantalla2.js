@@ -9,6 +9,9 @@ import BackBtn from './BackBtn.js';
 import ForwardBtn from './ForwardBtn.js';
 
 import './Pantalla2.css';
+import single from'./img/simple.png';
+import multiple from'./img/multiple.png';
+import collage from'./img/collage.png';
 
 var styles = {
   singlePrint: 'Single print',
@@ -77,10 +80,12 @@ class Pantalla2 extends Component {
           <h4>1. Elije el estilo</h4>
           <hr/>
           <div className="estilos">
-            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.singlePrint)} nombre={styles.singlePrint} precioMinimo={14}/>
-            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.splitImage)} nombre={styles.splitImage} precioMinimo={16}/>
-            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.wallDisplays)} nombre={styles.wallDisplays} precioMinimo={18}/>
-            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.collages)} nombre={styles.collages} precioMinimo={134}/>
+            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.singlePrint)}
+              nombre="Cuadro Simple" precioMinimo={60} imgSrc={single} />
+            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.splitImage)}
+              nombre="Múltiple" precioMinimo={60} imgSrc={multiple} />
+            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.collages)}
+              nombre="Collage" precioMinimo={60} imgSrc={collage} />
           </div><br />
           {sizeAndShape}
           <div className="navigation-buttons">
