@@ -2,3 +2,19 @@
   float: left;
   margin: 20px;
 }
+
+.Pantalla1 h1{
+  color: #E7316E;
+}
+
+.Pantalla1 h2 {
+  color: #959595;
+  font-size: 26px;
+  font-weight: normal;
+  padding: 0;
+  margin: 15px 0 45px;
+}
+
+.Pantalla1 .paneles {
+  padding-left: 100px;
+}

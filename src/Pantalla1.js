@@ -18,12 +18,14 @@ class Pantalla1 extends Component {
   render() {
     return (
       <div className="Pantalla1">
-        <h1>Crea tu cuadro</h1>
+        <h1>Armá tu cuadro</h1>
         <hr/>
-        <h3>Para comenzar, selecciona un material</h3>
-        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Lienzo')} imgSrc={canvasImg} material="Lienzo" descripcion="Lienzo de alta calidad."/>
-        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Acrílico')} imgSrc={glassImg} material="Acrílico" descripcion="Acrílico de alta calidad."/>
-        <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Aluminio')} imgSrc={aluminiumImg} material="Aluminio" descripcion="Aluminio de alta calidad."/>
+        <h2>Para comenzar, seleccioná un material</h2>
+        <div className="paneles">
+          <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Lienzo')} imgSrc={canvasImg} material="Lienzo" descripcion="Lienzo de alta calidad."/>
+          <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Acrílico')} imgSrc={glassImg} material="Acrílico" descripcion="Acrílico de alta calidad."/>
+          <PanelMaterial onClick={this.handlePanelClick.bind(null, 'Aluminio')} imgSrc={aluminiumImg} material="Aluminio" descripcion="Aluminio de alta calidad."/>
+        </div>
       </div>
     );
   }

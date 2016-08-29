@@ -18,7 +18,7 @@ class PanelMaterial extends Component {
         <EnhancedButton className="EnhancedButton">
 
               <img src={this.props.imgSrc} alt={'Seleccionar ' + material}/>
-              <h4>{material}</h4>
+              <h3>{material}</h3>
               <p>{this.props.descripcion}</p>
 
         </EnhancedButton>
