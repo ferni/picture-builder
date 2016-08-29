@@ -1,10 +1,16 @@
-.panel-mitad {
+.Pantalla2 .panel-mitad {
   width: 470px;
   float: left;
 }
 
-.estilos {
+.Pantalla2 .estilos {
   height: 110px;
+}
+
+.Pantalla2 .BotonEstilo {
+  float: left;
+  margin-right: 3px;
+  margin-left: 15px;
 }
 
 .Pantalla2 h4 {
