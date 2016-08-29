@@ -4,7 +4,8 @@ import EnhancedButton from 'material-ui/internal/EnhancedButton.js';
 class BotonEstilo extends Component {
   render() {
     return (
-      <div  className="BotonEstilo seleccionable"  onTouchTap={this.props.onClick}>
+      <div className={"BotonEstilo seleccionable" + (this.props.selected ? ' selected' : '')}
+        onTouchTap={this.props.onClick}>
         <EnhancedButton className="EnhancedButton">
 
             <img src={this.props.imgSrc} alt={this.props.descripcion}/><br/>

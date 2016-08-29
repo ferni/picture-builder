@@ -80,11 +80,14 @@ class Pantalla2 extends Component {
           <h4>1. Elije el estilo</h4>
           <hr/>
           <div className="estilos">
-            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.singlePrint)}
+            <BotonEstilo selected={this.state.style === styles.singlePrint}
+              onClick={this.handleStyleClick.bind(null, styles.singlePrint)}
               nombre="Cuadro Simple" precioMinimo={60} imgSrc={single} />
-            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.splitImage)}
+            <BotonEstilo selected={this.state.style === styles.splitImage}
+              onClick={this.handleStyleClick.bind(null, styles.splitImage)}
               nombre="Múltiple" precioMinimo={60} imgSrc={multiple} />
-            <BotonEstilo onClick={this.handleStyleClick.bind(null, styles.collages)}
+            <BotonEstilo selected={this.state.style === styles.collages}
+              onClick={this.handleStyleClick.bind(null, styles.collages)}
               nombre="Collage" precioMinimo={60} imgSrc={collage} />
           </div><br />
           {sizeAndShape}
