@@ -77,12 +77,12 @@ class Pantalla2 extends Component {
           <CuadroPreview config={this.getConfigCuadro()}/>
         </div>
         <div className="panel-mitad">
-          <h4>1. Elije el estilo</h4>
+          <h4>1. Elije el estilo de cuadro</h4>
           <hr/>
           <div className="estilos">
             <BotonEstilo selected={this.state.style === styles.singlePrint}
               onClick={this.handleStyleClick.bind(null, styles.singlePrint)}
-              nombre="Cuadro Simple" precioMinimo={60} imgSrc={single} />
+              nombre="Simple" precioMinimo={60} imgSrc={single} />
             <BotonEstilo selected={this.state.style === styles.splitImage}
               onClick={this.handleStyleClick.bind(null, styles.splitImage)}
               nombre="Múltiple" precioMinimo={60} imgSrc={multiple} />
