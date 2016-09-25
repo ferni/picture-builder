@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
+import { Rect } from 'react-konva';
 
 //A rectangular frame
 class Frame extends Component {
-    componentDidMount() {
-        this.updateCanvas();
-    }
-    componentDidUpdate() {
-        this.updateCanvas();
-    }
-    updateCanvas() {
-        const ctx = this.refs.canvas.getContext('2d');
-        ctx.fillStyle = this.props.color;
-        ctx.fillRect(0,0, 100, 100);
-    }
-    render() {
-        return (
-          <div>
-          <h1>Color: {this.props.color}</h1>
-            <canvas className="Frame" ref="canvas" width={300} height={300}/>
-            </div>
-        );
-    }
+  constructor(...args) {
+    super(...args)
+    this.handleDragEnd = this.handleDragEnd.bind(this)
+  }
+  handleDragEnd(e) {
+    console.log(JSON.stringify(e.target))
+  }
+  render() {
+      return (
+        <Rect draggable={true}
+            onDragend={this.handleDragEnd}
+              x={10} y={10} width={50} height={50}
+              fill={this.props.color}
+              shadowBlur={10}
+          />
+      );
+  }
 }
 
 export default Frame;
