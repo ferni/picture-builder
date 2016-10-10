@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Frame from './Frame.js';
-import {Layer, Stage, Group, Image as KonvaImage} from 'react-konva';
-import aluminiumImg from'./img/aluminium.jpg';
-import Img from './Img.js';
+import {Stage} from 'react-konva';
+
 
 class CuadroPreview extends Component {
   constructor(props) {
@@ -27,17 +26,7 @@ class CuadroPreview extends Component {
 
     return (
       <Stage onClick={this.handleClick} width={700} height={700}>
-        <Layer>
-          <Group clip={{
-            x : 100,
-            y : 40,
-            width : 50,
-            height : 50
-          }}>
-            <Img x={0} y={0} src={aluminiumImg} />
-            <Frame color="pink"/>
-          </Group>
-        </Layer>
+        <Frame />
       </Stage>
     );
   }

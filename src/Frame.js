@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Rect } from 'react-konva';
+import {Rect, Layer, Stage, Group} from 'react-konva';
+import aluminiumImg from'./img/aluminium.jpg';
+import Img from './Img.js';
 
 //A rectangular frame
 class Frame extends Component {
@@ -12,12 +14,28 @@ class Frame extends Component {
   }
   render() {
       return (
-        <Rect draggable={true}
-            onDragend={this.handleDragEnd}
-              x={10} y={10} width={50} height={50}
-              fill={this.props.color}
-              shadowBlur={10}
+        <Layer>
+          <Rect
+            x={100}
+            y={40}
+            width={50}
+            height={50}
+            shadowColor='black'
+            shadowBlur={5}
+            shadowOffset={{x : 2, y : 2}}
+            shadowOpacity={0.8}
+            stroke='black'
           />
+            <Group clip={{
+              x : 100,
+              y : 40,
+              width : 50,
+              height : 50
+            }}>
+
+              <Img x={0} y={0} src={aluminiumImg} />
+            </Group>
+          </Layer>
       );
   }
 }
