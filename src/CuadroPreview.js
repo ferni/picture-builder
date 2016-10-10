@@ -27,9 +27,16 @@ class CuadroPreview extends Component {
 
     return (
       <Stage onClick={this.handleClick} width={700} height={700}>
-        <Layer width={20} height={20}>
-          <Img src={aluminiumImg} />
-          <Frame color="pink"/>
+        <Layer>
+          <Group clip={{
+            x : 100,
+            y : 40,
+            width : 50,
+            height : 50
+          }}>
+            <Img x={0} y={0} src={aluminiumImg} />
+            <Frame color="pink"/>
+          </Group>
         </Layer>
       </Stage>
     );

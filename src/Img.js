@@ -128,7 +128,16 @@ class Img extends Component {
 			pos = {x: this.props.x || 0, y: this.props.y || 0};
 
 		return (
-			<Image image={this.state.image} x={pos.x} y={pos.y} width={dims.width} height={dims.height}/>
+			<Image
+				image={this.state.image}
+				x={pos.x}
+				y={pos.y}
+				width={dims.width}
+				height={dims.height}
+				draggable={true}
+				rotation={this.props.rotation}
+				offset={this.props.offset}
+			/>
 		);
 	};
 }
