@@ -13,13 +13,13 @@ var styles = {
 }
 
 function renderStyle(name) {
-  return styles[name].map((s, index) => <Frame
+  return styles[name].map((s) => <Frame
     x={s.x}
     y={s.y}
     width={s.width}
     height={s.height}
-    key={index}
     img={aluminiumImg}
+    key={styles[name].indexOf(s)}
     />
   );
 }
@@ -31,7 +31,7 @@ class CuadroPreview extends Component {
   render() {
     return (
       <Stage width={700} height={700}>
-        {renderStyle('sarasa')} //this.props.config.style
+        {renderStyle('sarasa')}
       </Stage>
     );
   }
