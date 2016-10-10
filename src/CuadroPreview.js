@@ -1,32 +1,37 @@
 import React, { Component } from 'react';
 import Frame from './Frame.js';
 import {Stage} from 'react-konva';
+import aluminiumImg from'./img/aluminium.jpg';
 
+var styles = {
+  sarasa: [
+    {x: 10, y: 10, width: 200, height: 200},
+    {x: 220, y: 10, width: 200, height: 200},
+    {x: 10, y: 220, width: 200, height: 200},
+    {x: 220, y: 220, width: 200, height: 200}
+  ]
+}
+
+function renderStyle(name) {
+  return styles[name].map((s, index) => <Frame
+    x={s.x}
+    y={s.y}
+    width={s.width}
+    height={s.height}
+    key={index}
+    img={aluminiumImg}
+    />
+  );
+}
 
 class CuadroPreview extends Component {
   constructor(props) {
     super(props);
-    var self = this;
-    this.state = {
-      todosGrises: false
-    };
-    this.handleClick = this.handleClick.bind(this);
-    var imageObj = new Image();
-    imageObj.onload = function() {
-      self.setState({image: this})
-    };
-    imageObj.src = 'http://konvajs.github.io/assets/darth-vader.jpg';
-  }
-  handleClick() {
-    console.log('clicked');
-    this.setState({todosGrises: true});
   }
   render() {
-    var descripcion = JSON.stringify(this.props.config);
-
     return (
-      <Stage onClick={this.handleClick} width={700} height={700}>
-        <Frame />
+      <Stage width={700} height={700}>
+        {renderStyle('sarasa')} //this.props.config.style
       </Stage>
     );
   }
