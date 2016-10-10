@@ -6,7 +6,12 @@ class Pantalla3 extends Component {
    render() {
      return (
        <div className="Pantalla3">
-        <ImageUploads />
+        <div className="panel-mitad">
+        
+        </div>
+        <div className="panel-mitad">
+          <ImageUploads />
+        </div>
        </div>
      );
    }

@@ -30,3 +30,8 @@
   width: 470px;
   height: 80px;
 }
+
+.panel-mitad {
+  width: 470px;
+  float: left;
+}
