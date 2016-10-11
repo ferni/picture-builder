@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import CuadroPreview from '../CuadroPreview';
 import BotonEstilo from './BotonEstilo.js';
 import {Dropdown, Size, Shape, SizeAndShape} from '../Dropdown';
-import BackBtn from '../BackBtn.js';
-import ForwardBtn from '../ForwardBtn.js';
+import NavButtons from '../NavButtons';
 
 import './Pantalla2.css';
 import single from'../img/simple.png';
@@ -71,10 +70,12 @@ class Pantalla2 extends Component {
               nombre="Collage" precioMinimo={60} imgSrc={collage} />
           </div><br />
           {sizeAndShape}
-          <div className="navigation-buttons">
-            <BackBtn desc="Cambiar Material" onClick={this.props.onGoTo.bind(null, 1)}/>
-            <ForwardBtn desc="Subir Fotos" onClick={this.props.onGoTo.bind(null, 3)}/>
-          </div>
+          <NavButtons
+            back="Cambiar material"
+            forward="Subir fotos"
+            onGoTo={this.props.onGoTo}
+            currentScreen={2}
+          />
         </div>
       </div>
     );

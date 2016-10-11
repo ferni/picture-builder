@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Pantalla3.css';
 import ImageUploads from './ImageUploads.js';
-import BackBtn from '../BackBtn.js';
-import ForwardBtn from '../ForwardBtn.js';
+import NavButtons from '../NavButtons';
 
 class Pantalla3 extends Component {
    render() {
@@ -13,10 +12,12 @@ class Pantalla3 extends Component {
           </div>
           <div className="panel-mitad">
             <ImageUploads />
-            <div className="navigation-buttons">
-              <BackBtn desc="Cambiar Material" onClick={this.props.onGoTo.bind(null, 2)}/>
-              <ForwardBtn desc="Subir Fotos" onClick={this.props.onGoTo.bind(null, 4)}/>
-            </div>
+            <NavButtons
+              back="Cambiar estilo"
+              forward="Elegir efectos"
+              onGoTo={this.props.onGoTo}
+              currentScreen={3}
+            />
           </div>
        </div>
      );
