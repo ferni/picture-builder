@@ -53,7 +53,7 @@ class Pantalla2 extends Component {
       <div className="Pantalla2">
         <div className="panel-mitad">
           <h3>{this.props.my.material} {this.props.my.style}: {this.props.my.shape} {this.props.my.size}</h3>
-          <CuadroPreview config={this.props.my}/>
+          <CuadroPreview config={this.props.my} enableImages={false} enableEffects={false}/>
         </div>
         <div className="panel-mitad">
           <h4>1. Elije el estilo de cuadro</h4>

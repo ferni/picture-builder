@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './Pantalla3.css';
 import ImageUploads from './ImageUploads.js';
 import NavButtons from '../NavButtons';
+import CuadroPreview from '../CuadroPreview';
 
 class Pantalla3 extends Component {
    render() {
      return (
        <div className="Pantalla3">
           <div className="panel-mitad">
-
+            <CuadroPreview config={this.props.my} enableImages={true} enableEffects={false}/>
           </div>
           <div className="panel-mitad">
             <ImageUploads />

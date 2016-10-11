@@ -19,13 +19,14 @@ var imgConfigs = [
   {src: aluminiumImg, scale:0.2, rotation:5, x:10, y:20}
 ]
 
-function renderStyle(name) {
+function renderStyle(self, name) {
   return styles[name].map((s) => <Frame
     x={s.x}
     y={s.y}
     width={s.width}
     height={s.height}
-    imgConfig={imgConfigs[styles[name].indexOf(s)]}
+    imgConfig={self.props.enableImages ?
+      imgConfigs[styles[name].indexOf(s)] : null}
     key={styles[name].indexOf(s)}
     />
   );
@@ -38,7 +39,7 @@ class CuadroPreview extends Component {
   render() {
     return (
       <Stage width={700} height={700}>
-        {renderStyle('sarasa')}
+        {renderStyle(this, 'sarasa')}
       </Stage>
     );
   }
