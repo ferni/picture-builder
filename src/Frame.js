@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Rect, Layer, Group} from 'react-konva';
 import Img from './Img.js';
+import blank from './img/blank-canvas.png';
 
 //A rectangular frame
 class Frame extends Component {
@@ -36,7 +37,17 @@ class Frame extends Component {
               }}
             >
 
-              <Img x={0} y={0} src={this.props.img} />
+              {this.props.imgConfig ?
+                <Img
+                  x={this.props.imgConfig.x}
+                  y={this.props.imgConfig.y}
+                  src={this.props.imgConfig.src}
+                  scale={this.props.imgConfig.scale}
+                  rotation={this.props.imgConfig.rotation}
+                  draggable={true}
+                /> :
+                <Img x={0} y={0} src={blank} draggable={false}/>
+              }
             </Group>
           </Layer>
       );

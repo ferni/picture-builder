@@ -139,9 +139,11 @@ class Img extends Component {
 				y={pos.y}
 				width={dims.width}
 				height={dims.height}
-				draggable={true}
+				draggable={this.props.draggable}
 				rotation={this.props.rotation}
 				offset={this.props.offset}
+				scaleX={this.props.scale}
+				scaleY={this.props.scale}
 			/>
 		);
 	};

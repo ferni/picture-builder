@@ -12,13 +12,20 @@ var styles = {
   ]
 }
 
+var imgConfigs = [
+  {src: aluminiumImg, scale:0.5, rotation:1, x:10, y:20},
+  {src: aluminiumImg, scale:1.5, rotation:0, x:-50, y:20},
+  {src: aluminiumImg, scale:0.5, rotation:1.5, x:10, y:20},
+  {src: aluminiumImg, scale:0.2, rotation:5, x:10, y:20}
+]
+
 function renderStyle(name) {
   return styles[name].map((s) => <Frame
     x={s.x}
     y={s.y}
     width={s.width}
     height={s.height}
-    img={aluminiumImg}
+    imgConfig={imgConfigs[styles[name].indexOf(s)]}
     key={styles[name].indexOf(s)}
     />
   );
