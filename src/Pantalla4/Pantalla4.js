@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Pantalla4.css';
-import BackBtn from './BackBtn.js';
-import ForwardBtn from './ForwardBtn.js';
+import BackBtn from '../BackBtn.js';
+import ForwardBtn from '../ForwardBtn.js';
 
  class Pantalla4 extends Component {
    render() {

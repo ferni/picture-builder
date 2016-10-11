@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import CuadroPreview from './CuadroPreview.js';
+import CuadroPreview from '../CuadroPreview.js';
 import BotonEstilo from './BotonEstilo.js';
-import Dropdown from './Dropdown.js';
-import SizeAndShape from './dropdown-contents/SizeAndShape.js';
-import Size from './dropdown-contents/Size.js';
-import Shape from './dropdown-contents/Shape.js';
-import BackBtn from './BackBtn.js';
-import ForwardBtn from './ForwardBtn.js';
+import Dropdown from '../Dropdown.js';
+import SizeAndShape from '../dropdown-contents/SizeAndShape.js';
+import Size from '../dropdown-contents/Size.js';
+import Shape from '../dropdown-contents/Shape.js';
+import BackBtn from '../BackBtn.js';
+import ForwardBtn from '../ForwardBtn.js';
 
 import './Pantalla2.css';
-import single from'./img/simple.png';
-import multiple from'./img/multiple.png';
-import collage from'./img/collage.png';
-import styles from './styles-enum.js';
+import single from'../img/simple.png';
+import multiple from'../img/multiple.png';
+import collage from'../img/collage.png';
+import styles from '../styles-enum.js';
 
 class Pantalla2 extends Component {
   constructor(props) {

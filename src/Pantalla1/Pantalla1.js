@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PanelMaterial from './PanelMaterial.js';
 
 import './Pantalla1.css';
-import canvasImg from'./img/canvas.jpg';
-import glassImg from'./img/glass.jpg';
-import aluminiumImg from'./img/aluminium.jpg';
+import canvasImg from'../img/canvas.jpg';
+import glassImg from'../img/glass.jpg';
+import aluminiumImg from'../img/aluminium.jpg';
 
 class Pantalla1 extends Component {
   constructor(props) {

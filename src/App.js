@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Pantalla1 from './Pantalla1.js';
-import Pantalla2 from './Pantalla2.js';
-import Pantalla3 from './Pantalla3.js';
-import Pantalla4 from './Pantalla4.js';
+import Pantalla1 from './Pantalla1/Pantalla1.js';
+import Pantalla2 from './Pantalla2/Pantalla2.js';
+import Pantalla3 from './Pantalla3/Pantalla3.js';
+import Pantalla4 from './Pantalla4/Pantalla4.js';
 import styles from './styles-enum.js';
 
 class App extends Component {
