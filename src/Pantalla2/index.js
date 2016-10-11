@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import CuadroPreview from '../CuadroPreview';
 import BotonEstilo from './BotonEstilo.js';
-import Dropdown from '../Dropdown.js';
-import SizeAndShape from '../dropdown-contents/SizeAndShape.js';
-import Size from '../dropdown-contents/Size.js';
-import Shape from '../dropdown-contents/Shape.js';
+import {Dropdown, Size, Shape, SizeAndShape} from '../Dropdown';
 import BackBtn from '../BackBtn.js';
 import ForwardBtn from '../ForwardBtn.js';
 
