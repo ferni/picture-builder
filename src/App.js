@@ -5,34 +5,34 @@ import Pantalla1 from './Pantalla1.js';
 import Pantalla2 from './Pantalla2.js';
 import Pantalla3 from './Pantalla3.js';
 import Pantalla4 from './Pantalla4.js';
-
+import styles from './styles-enum.js';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pantalla: 1
+      pantalla: 1,
+      pictureConfig: {
+        style: styles.singlePrint
+      }
     };
     this.handleIrAPantalla = this.handleIrAPantalla.bind(this);
-    this.handleMaterialSelected = this.handleMaterialSelected.bind(this);
+    this.handleConfigChange = this.handleConfigChange.bind(this);
   }
   handleIrAPantalla(numero) {
     this.setState({pantalla: numero});
   }
-  handleMaterialSelected(material) {
-    this.setState({
-      material: material,
-      pantalla: 2
-    });
+  handleConfigChange(pictureConfig) {
+    this.setState({ pictureConfig});
   }
   render() {
-    var pantallas =
-    [
-      <Pantalla1 onMaterialSelected={this.handleMaterialSelected}/>,
-      <Pantalla2 material={this.state.material} onGoTo={this.handleIrAPantalla}/>,
-      <Pantalla3 onGoTo={this.handleIrAPantalla}/>,
-      <Pantalla4 onGoTo={this.handleIrAPantalla}/>
-    ];
+    var pantallas = [Pantalla1, Pantalla2, Pantalla3, Pantalla4].map(Pantalla =>
+      <Pantalla
+        onConfigChange={this.handleConfigChange}
+        onGoTo={this.handleIrAPantalla}
+        my={this.state.pictureConfig}
+      />
+    );
 
     return (
       <div className="App">

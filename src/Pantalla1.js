@@ -12,8 +12,10 @@ class Pantalla1 extends Component {
     this.handlePanelClick = this.handlePanelClick.bind(this);
   }
   handlePanelClick(material) {
-    this.props.onMaterialSelected(material);
+    let newConfig = Object.assign({}, this.props.my, {material})
+    this.props.onConfigChange(newConfig);
     console.log('Material seleccionado:' + material);
+    this.props.onGoTo(2);
   }
   render() {
     return (

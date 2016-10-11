@@ -1,6 +1,8 @@
 //Img implementation by andrewluetgers
 //https://gist.github.com/andrewluetgers/7c4a90cbe6341c401d0b7975a8ceeedb
 
+/* eslint-disable */
+
 import React, {Component} from 'react';
 import {Image} from 'react-konva';
 

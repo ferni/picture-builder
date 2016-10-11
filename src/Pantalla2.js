@@ -12,37 +12,20 @@ import './Pantalla2.css';
 import single from'./img/simple.png';
 import multiple from'./img/multiple.png';
 import collage from'./img/collage.png';
-
-var styles = {
-  singlePrint: 'Single print',
-  splitImage: 'Split image',
-  wallDisplays: 'Wall displays',
-  collages: 'Collages'
-};
+import styles from './styles-enum.js';
 
 class Pantalla2 extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      style: styles.singlePrint
-    }
-    this.getConfigCuadro = this.getConfigCuadro.bind(this);
     this.handleStyleClick = this.handleStyleClick.bind(this);
   }
-  getConfigCuadro() {
-    return {
-      material: this.props.material,
-      style: this.state.style,
-      shape: this.state.shape,
-      size: this.state.size
-    }
-  }
   handleStyleClick(style) {
-    this.setState({style});
+    let newConfig = Object.assign({}, this.props.my, {style})
+    this.props.onConfigChange(newConfig);
   }
   render() {
     var sizeAndShape;
-    if (this.state.style !== styles.collages) {
+    if (this.props.my.style !== styles.collages) {
       sizeAndShape = (
         <div>
           <h4>2. Elije forma y tamaño</h4>
@@ -73,20 +56,20 @@ class Pantalla2 extends Component {
     return (
       <div className="Pantalla2">
         <div className="panel-mitad">
-          <h3>{this.props.material} {this.state.style}: {this.state.shape} {this.state.size}</h3>
-          <CuadroPreview config={this.getConfigCuadro()}/>
+          <h3>{this.props.my.material} {this.props.my.style}: {this.props.my.shape} {this.props.my.size}</h3>
+          <CuadroPreview config={this.props.my}/>
         </div>
         <div className="panel-mitad">
           <h4>1. Elije el estilo de cuadro</h4>
           <hr/>
           <div className="estilos">
-            <BotonEstilo selected={this.state.style === styles.singlePrint}
+            <BotonEstilo selected={this.props.my.style === styles.singlePrint}
               onClick={this.handleStyleClick.bind(null, styles.singlePrint)}
               nombre="Simple" precioMinimo={60} imgSrc={single} />
-            <BotonEstilo selected={this.state.style === styles.splitImage}
+            <BotonEstilo selected={this.props.my.style === styles.splitImage}
               onClick={this.handleStyleClick.bind(null, styles.splitImage)}
               nombre="Múltiple" precioMinimo={60} imgSrc={multiple} />
-            <BotonEstilo selected={this.state.style === styles.collages}
+            <BotonEstilo selected={this.props.my.style === styles.collages}
               onClick={this.handleStyleClick.bind(null, styles.collages)}
               nombre="Collage" precioMinimo={60} imgSrc={collage} />
           </div><br />
