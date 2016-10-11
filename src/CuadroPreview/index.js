@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Frame from './Frame.js';
 import {Stage} from 'react-konva';
-import aluminiumImg from'./img/aluminium.jpg';
+import aluminiumImg from'../img/aluminium.jpg';
 
 var styles = {
   sarasa: [

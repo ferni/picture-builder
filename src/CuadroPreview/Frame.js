@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Rect, Layer, Group} from 'react-konva';
 import Img from './Img.js';
-import blank from './img/blank-canvas.png';
+import blank from '../img/blank-canvas.png';
 
 //A rectangular frame
 class Frame extends Component {

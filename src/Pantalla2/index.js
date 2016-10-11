@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CuadroPreview from '../CuadroPreview.js';
+import CuadroPreview from '../CuadroPreview';
 import BotonEstilo from './BotonEstilo.js';
 import Dropdown from '../Dropdown.js';
 import SizeAndShape from '../dropdown-contents/SizeAndShape.js';
