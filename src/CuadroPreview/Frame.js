@@ -24,7 +24,8 @@ class Frame extends Component {
             shadowBlur={5}
             shadowOffset={{x : 2, y : 2}}
             shadowOpacity={0.8}
-            stroke='black'
+            stroke={this.props.selected ? 'blue' : 'black'}
+            onClick={this.props.onClick}
           />
             <Group
               x={this.props.x}
@@ -35,6 +36,7 @@ class Frame extends Component {
                 width: this.props.width,
                 height: this.props.height
               }}
+              onClick={this.props.onClick}
             >
 
               {this.props.imgConfig ?

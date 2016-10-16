@@ -1,45 +1,43 @@
 import React, { Component } from 'react';
 import Frame from './Frame.js';
 import {Stage} from 'react-konva';
-import aluminiumImg from'../img/aluminium.jpg';
 
 var styles = {
   sarasa: [
-    {x: 10, y: 10, width: 200, height: 200},
-    {x: 220, y: 10, width: 200, height: 200},
-    {x: 10, y: 220, width: 200, height: 200},
-    {x: 220, y: 220, width: 200, height: 200}
+    {x: 10, y: 10, width: 150, height: 150},
+    {x: 170, y: 10, width: 150, height: 150},
+    {x: 10, y: 170, width: 150, height: 150},
+    {x: 170, y: 170, width: 150, height: 150}
   ]
-}
-
-var imgConfigs = [
-  {src: aluminiumImg, scale:0.5, rotation:1, x:10, y:20},
-  {src: aluminiumImg, scale:1.5, rotation:0, x:-50, y:20},
-  {src: aluminiumImg, scale:0.5, rotation:1.5, x:10, y:20},
-  {src: aluminiumImg, scale:0.2, rotation:5, x:10, y:20}
-]
-
-function renderStyle(self, name) {
-  return styles[name].map((s) => <Frame
-    x={s.x}
-    y={s.y}
-    width={s.width}
-    height={s.height}
-    imgConfig={self.props.enableImages ?
-      imgConfigs[styles[name].indexOf(s)] : null}
-    key={styles[name].indexOf(s)}
-    />
-  );
 }
 
 class CuadroPreview extends Component {
   constructor(props) {
     super(props);
+    this.renderStyle = this.renderStyle.bind(this);
+  }
+  renderStyle(name) {
+    let self = this;
+    return styles[name].map((s) => {
+      let index = styles[name].indexOf(s);
+      return <Frame
+        x={s.x}
+        y={s.y}
+        width={s.width}
+        height={s.height}
+        imgConfig={self.props.enableImages ?
+          this.props.imgConfigs[index] : null}
+        selected={self.props.selectedFrame === index}
+        onClick={self.props.onSelected ? self.props.onSelected.bind(this, index) : function(){}}
+        key={index}
+        />
+      }
+    );
   }
   render() {
     return (
       <Stage width={700} height={700}>
-        {renderStyle(this, 'sarasa')}
+        {this.renderStyle('sarasa')}
       </Stage>
     );
   }

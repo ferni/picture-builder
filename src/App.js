@@ -7,13 +7,26 @@ import Pantalla3 from './Pantalla3';
 import Pantalla4 from './Pantalla4';
 import styles from './styles-enum.js';
 
+
+
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       pantalla: 1,
+      /*
+        pictureConfig:
+          - style: string
+          - size:
+          - shape:
+          - images: array
+          - effects: array
+      */
       pictureConfig: {
-        style: styles.singlePrint
+        style: styles.singlePrint,
+        images: [],
+        effects: []
       }
     };
     this.handleIrAPantalla = this.handleIrAPantalla.bind(this);
