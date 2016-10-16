@@ -11,6 +11,16 @@ import { ImageUploadField,UploadField} from 'react-image-file';
        files: []
      };
    }
+   componentDidMount() {
+     this.updateImages();
+   }
+   componentDidUpdate() {
+     this.updateImages();
+   }
+   updateImages() {
+     var images = document.querySelectorAll('.images div');
+     images.forEach(img => img.setAttribute("draggable", "true"));
+   }
    addFiles(files) {
      console.log(files);
      var allFiles = this.state.files;
@@ -26,9 +36,9 @@ import { ImageUploadField,UploadField} from 'react-image-file';
      );
      return (
        <div className="ImageUploads">
-
-        {images}
-
+        <div className="images">
+          {images}
+        </div>
         <ImageUploadField
             label='upload images'
             imageWidth={50}
@@ -38,6 +48,7 @@ import { ImageUploadField,UploadField} from 'react-image-file';
         />
        </div>
      );
+
    }
  }
 
