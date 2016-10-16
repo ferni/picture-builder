@@ -9,9 +9,11 @@ class Pantalla3 extends Component {
   constructor(...args) {
     super(...args);
     this.handleZoomChange = this.handleZoomChange.bind(this);
+    this.handleRotationChange = this.handleRotationChange.bind(this);
     this.handleFrameSelected = this.handleFrameSelected.bind(this);
     this.handlePreviewChange = this.handlePreviewChange.bind(this);
     this.getZoomValue = this.getZoomValue.bind(this);
+    this.getRotationValue = this.getRotationValue.bind(this);
     this.state = {
       selected: -1
     };
@@ -22,6 +24,15 @@ class Pantalla3 extends Component {
     }
     let newImgConfigs = this.props.my.images.slice(0);
     newImgConfigs[this.state.selected].scale = value;
+    let newConfig = Object.assign({}, this.props.my, {images: newImgConfigs})
+    this.props.onConfigChange(newConfig);
+  }
+  handleRotationChange(e, value) {
+    if (this.state.selected === -1) {
+      return;
+    }
+    let newImgConfigs = this.props.my.images.slice(0);
+    newImgConfigs[this.state.selected].rotation = value;
     let newConfig = Object.assign({}, this.props.my, {images: newImgConfigs})
     this.props.onConfigChange(newConfig);
   }
@@ -37,6 +48,12 @@ class Pantalla3 extends Component {
       return 0;
     }
     return this.props.my.images[this.state.selected].scale;
+  }
+  getRotationValue() {
+    if (this.state.selected === -1) {
+      return 0;
+    }
+    return this.props.my.images[this.state.selected].rotation;
   }
    render() {
      return (
@@ -57,10 +74,17 @@ class Pantalla3 extends Component {
                 style={{width: 200}}
                 value={this.getZoomValue()}
                 onChange={this.handleZoomChange}
-                disabled={this.props.selected === -1}
+                disabled={this.state.selected === -1}
               />
               <label>Rotación</label>
-              <Slider style={{width: 200}} defaultValue={0} />
+              <Slider
+                style={{width: 200}}
+                value={this.getRotationValue()}
+                onChange={this.handleRotationChange}
+                disabled={this.state.selected === -1}
+                max={360}
+                step={1}
+              />
             </div>
           </div>
           <div className="panel-mitad">
