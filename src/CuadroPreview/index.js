@@ -21,6 +21,7 @@ class CuadroPreview extends Component {
     let newImgConfigs = this.props.imgConfigs.slice(0);
     newImgConfigs[index].x = e.target.attrs.x;
     newImgConfigs[index].y = e.target.attrs.y;
+    this.props.onSelected(index);
     this.onChange(newImgConfigs);
   }
   renderStyle(name) {
