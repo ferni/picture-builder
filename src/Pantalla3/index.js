@@ -11,12 +11,18 @@ class Pantalla3 extends Component {
     this.handleZoomChange = this.handleZoomChange.bind(this);
     this.handleFrameSelected = this.handleFrameSelected.bind(this);
     this.handlePreviewChange = this.handlePreviewChange.bind(this);
+    this.getZoomValue = this.getZoomValue.bind(this);
     this.state = {
       selected: -1
     };
   }
-  handleZoomChange(e) {
-    let newConfig = Object.assign({}, this.props.my, {zoom: e.target.value})
+  handleZoomChange(e, value) {
+    if (this.state.selected === -1) {
+      return;
+    }
+    let newImgConfigs = this.props.my.images.slice(0);
+    newImgConfigs[this.state.selected].scale = value;
+    let newConfig = Object.assign({}, this.props.my, {images: newImgConfigs})
     this.props.onConfigChange(newConfig);
   }
   handleFrameSelected(index) {
@@ -25,6 +31,12 @@ class Pantalla3 extends Component {
   handlePreviewChange(imgConfigs) {
     let newConfig = Object.assign({}, this.props.my, {images: imgConfigs})
     this.props.onConfigChange(newConfig);
+  }
+  getZoomValue() {
+    if (this.state.selected === -1) {
+      return 0;
+    }
+    return this.props.my.images[this.state.selected].scale;
   }
    render() {
      return (
@@ -41,7 +53,12 @@ class Pantalla3 extends Component {
             />
             <div className="zoom-y-rotacion">
               <label>Zoom</label>
-              <Slider style={{width: 200}} value={this.props.my.zoom} onChange={this.handleZoomChange}/>
+              <Slider
+                style={{width: 200}}
+                value={this.getZoomValue()}
+                onChange={this.handleZoomChange}
+                disabled={this.props.selected === -1}
+              />
               <label>Rotación</label>
               <Slider style={{width: 200}} defaultValue={0} />
             </div>
