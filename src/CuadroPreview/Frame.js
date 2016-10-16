@@ -7,10 +7,6 @@ import blank from '../img/blank-canvas.png';
 class Frame extends Component {
   constructor(...args) {
     super(...args)
-    this.handleDragEnd = this.handleDragEnd.bind(this)
-  }
-  handleDragEnd(e) {
-    console.log(JSON.stringify(e.target))
   }
   render() {
       return (
@@ -47,6 +43,7 @@ class Frame extends Component {
                   scale={this.props.imgConfig.scale}
                   rotation={this.props.imgConfig.rotation}
                   draggable={true}
+                  onDragend={this.props.onDragend}
                 /> :
                 <Img x={0} y={0} src={blank} draggable={false}/>
               }

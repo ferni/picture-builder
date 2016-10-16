@@ -7,6 +7,8 @@ import Pantalla3 from './Pantalla3';
 import Pantalla4 from './Pantalla4';
 import styles from './styles-enum.js';
 
+import aluminiumImg from'./img/aluminium.jpg';
+
 
 
 
@@ -25,7 +27,12 @@ class App extends Component {
       */
       pictureConfig: {
         style: styles.singlePrint,
-        images: [],
+        images: [
+          {src: aluminiumImg, scale:0.5, rotation:1, x:10, y:20},
+          {src: aluminiumImg, scale:1.5, rotation:0, x:-50, y:20},
+          {src: aluminiumImg, scale:0.5, rotation:1.5, x:10, y:20},
+          {src: aluminiumImg, scale:0.2, rotation:5, x:10, y:20}
+        ],
         effects: []
       }
     };

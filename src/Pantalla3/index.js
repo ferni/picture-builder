@@ -4,13 +4,13 @@ import ImageUploads from './ImageUploads.js';
 import NavButtons from '../NavButtons';
 import CuadroPreview from '../CuadroPreview';
 import Slider from 'material-ui/Slider';
-import aluminiumImg from'../img/aluminium.jpg';
 
 class Pantalla3 extends Component {
   constructor(...args) {
     super(...args);
     this.handleZoomChange = this.handleZoomChange.bind(this);
     this.handleFrameSelected = this.handleFrameSelected.bind(this);
+    this.handlePreviewChange = this.handlePreviewChange.bind(this);
     this.state = {
       selected: -1
     };
@@ -22,6 +22,10 @@ class Pantalla3 extends Component {
   handleFrameSelected(index) {
     this.setState({selected: index});
   }
+  handlePreviewChange(imgConfigs) {
+    let newConfig = Object.assign({}, this.props.my, {images: imgConfigs})
+    this.props.onConfigChange(newConfig);
+  }
    render() {
      return (
        <div className="Pantalla3">
@@ -29,15 +33,11 @@ class Pantalla3 extends Component {
             <CuadroPreview
               config={this.props.my}
               enableImages={true}
-              imgConfigs={[
-                {src: aluminiumImg, scale:0.5, rotation:1, x:10, y:20},
-                {src: aluminiumImg, scale:1.5, rotation:0, x:-50, y:20},
-                {src: aluminiumImg, scale:0.5, rotation:1.5, x:10, y:20},
-                {src: aluminiumImg, scale:0.2, rotation:5, x:10, y:20}
-              ]}
+              imgConfigs={this.props.my.images}
               enableEffects={false}
               selectedFrame={this.state.selected}
               onSelected={this.handleFrameSelected}
+              onChange={this.handlePreviewChange}
             />
             <div className="zoom-y-rotacion">
               <label>Zoom</label>

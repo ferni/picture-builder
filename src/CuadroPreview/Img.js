@@ -144,6 +144,7 @@ class Img extends Component {
 				offset={this.props.offset}
 				scaleX={this.props.scale}
 				scaleY={this.props.scale}
+				onDragend={this.props.onDragend}
 			/>
 		);
 	};
