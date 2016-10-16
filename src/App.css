@@ -31,7 +31,11 @@
   height: 80px;
 }
 
-.panel-mitad {
-  width: 470px;
-  float: left;
+.left-col {
+  width: 460px;
+  float: left
+}
+.right-col {
+  width: 425px;
+  float: left
 }

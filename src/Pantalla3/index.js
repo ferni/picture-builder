@@ -58,7 +58,7 @@ class Pantalla3 extends Component {
    render() {
      return (
        <div className="Pantalla3">
-          <div className="panel-mitad">
+          <div className="left-col">
             <CuadroPreview
               config={this.props.my}
               enableImages={true}
@@ -87,7 +87,7 @@ class Pantalla3 extends Component {
               />
             </div>
           </div>
-          <div className="panel-mitad">
+          <div className="right-col">
             <ImageUploads />
             <NavButtons
               back="Cambiar estilo"

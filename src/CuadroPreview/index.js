@@ -45,7 +45,7 @@ class CuadroPreview extends Component {
   }
   render() {
     return (
-      <Stage width={700} height={700}>
+      <Stage width={460} height={400}>
         {this.renderStyle('sarasa')}
       </Stage>
     );
