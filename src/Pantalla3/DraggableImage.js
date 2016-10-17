@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { DragSource } from 'react-dnd';
+import Image from 'react-image-file';
 
 const style = {
   border: '1px dashed gray',
   backgroundColor: 'white',
-  padding: '0.5rem 1rem',
+  padding: '0.2rem 0.2rem',
   marginRight: '1.5rem',
   marginBottom: '1.5rem',
   cursor: 'move',
@@ -49,7 +50,12 @@ export default class DraggableImage extends Component {
     return (
       connectDragSource(
         <div style={{ ...style, opacity }}>
-          {name}
+          <Image
+            file={this.props.file}
+            alt='Ten presionado el botón izquierdo del mouse y arrastra hacia el cuadro'
+            width={this.props.width}
+            height={this.props.height}
+          />
         </div>
       )
     );

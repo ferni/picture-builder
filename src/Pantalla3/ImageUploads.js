@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './ImageUploads.css';
-import Image from 'react-image-file';
 import { ImageUploadField,UploadField} from 'react-image-file';
 import DraggableImage from './DraggableImage.js';
 
@@ -33,10 +32,8 @@ import DraggableImage from './DraggableImage.js';
    }
    render() {
      var images = this.state.files.map(file =>
-       <DraggableImage name='Glass'/>
-
+       <DraggableImage file={file} width={100} height={100} />
      );
-     //<Image file={file} alt='some text' width={100} height={100} />
      return (
        <div className="ImageUploads">
         <div className="images">
