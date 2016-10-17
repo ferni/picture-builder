@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import Frame from './Frame.js';
 import {Stage} from 'react-konva';
 
@@ -11,7 +11,39 @@ var styles = {
   ]
 }
 
+import { DropTarget } from 'react-dnd';
+
+const style = {
+  height: '12rem',
+  width: '12rem',
+  marginRight: '1.5rem',
+  marginBottom: '1.5rem',
+  color: 'white',
+  padding: '1rem',
+  textAlign: 'center',
+  fontSize: '1rem',
+  lineHeight: 'normal',
+  float: 'left'
+};
+
+const boxTarget = {
+  drop() {
+    return { name: 'CuadroPreview' };
+  }
+};
+
+@DropTarget('img', boxTarget, (connect, monitor) => ({
+  connectDropTarget: connect.dropTarget(),
+  isOver: monitor.isOver(),
+  canDrop: monitor.canDrop()
+}))
 class CuadroPreview extends Component {
+  static propTypes = {
+    connectDropTarget: PropTypes.func.isRequired,
+    isOver: PropTypes.bool.isRequired,
+    canDrop: PropTypes.bool.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.renderStyle = this.renderStyle.bind(this);
@@ -54,8 +86,11 @@ class CuadroPreview extends Component {
     );
   }
   render() {
-    return (
-      <div className="CuadroPreview" onDrop={asdf => console.log('Dropped!')}>
+    const { canDrop, isOver, connectDropTarget } = this.props;
+    const isActive = canDrop && isOver;
+
+    return connectDropTarget(
+      <div className="CuadroPreview" style={{width: '100px', height: '100px'}}>
         <Stage width={460} height={400}>
           {this.renderStyle('sarasa')}
         </Stage>

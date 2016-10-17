@@ -4,8 +4,10 @@ import ImageUploads from './ImageUploads.js';
 import NavButtons from '../NavButtons';
 import CuadroPreview from '../CuadroPreview';
 import Slider from 'material-ui/Slider';
-import DustbinSingleTarget from '../DustbinSingleTarget';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
+@DragDropContext(HTML5Backend)
 class Pantalla3 extends Component {
   constructor(...args) {
     super(...args);
@@ -90,7 +92,6 @@ class Pantalla3 extends Component {
           </div>
           <div className="right-col">
             <ImageUploads />
-            <DustbinSingleTarget />
             <NavButtons
               back="Cambiar estilo"
               forward="Elegir efectos"

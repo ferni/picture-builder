@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './ImageUploads.css';
 import Image from 'react-image-file';
 import { ImageUploadField,UploadField} from 'react-image-file';
+import DraggableImage from './DraggableImage.js';
 
  class ImageUploads extends Component {
    constructor(...args) {
@@ -32,8 +33,10 @@ import { ImageUploadField,UploadField} from 'react-image-file';
    }
    render() {
      var images = this.state.files.map(file =>
-       <Image file={file} alt='some text' width={100} height={100} />
+       <DraggableImage name='Glass'/>
+
      );
+     //<Image file={file} alt='some text' width={100} height={100} />
      return (
        <div className="ImageUploads">
         <div className="images">
