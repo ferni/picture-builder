@@ -58,6 +58,7 @@ class CuadroPreview extends Component {
           height: f.height + 'px'
         }}
         key={index}
+        onDrop={this.props.onDrop.bind(this, index)}
         />
       }
     );

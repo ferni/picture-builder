@@ -13,8 +13,8 @@ const defaultStyle = {
 };
 
 const boxTarget = {
-  drop() {
-    return { name: 'DropZone' };
+  drop(props, monitor, component) {
+    component.props.onDrop(monitor.getItem().file);
   }
 };
 

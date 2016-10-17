@@ -15,19 +15,8 @@ const style = {
 const boxSource = {
   beginDrag(props) {
     return {
-      name: props.name
+      file: props.file
     };
-  },
-
-  endDrag(props, monitor) {
-    const item = monitor.getItem();
-    const dropResult = monitor.getDropResult();
-
-    if (dropResult) {
-      window.alert( // eslint-disable-line no-alert
-        `You dropped ${item.name} into ${dropResult.name}!`
-      );
-    }
   }
 };
 
@@ -39,7 +28,7 @@ export default class DraggableImage extends Component {
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
     isDragging: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired
+    file: PropTypes.string.isRequired
   };
 
   render() {

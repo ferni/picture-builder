@@ -15,6 +15,7 @@ class Pantalla3 extends Component {
     this.handleRotationChange = this.handleRotationChange.bind(this);
     this.handleFrameSelected = this.handleFrameSelected.bind(this);
     this.handlePreviewChange = this.handlePreviewChange.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
     this.getZoomValue = this.getZoomValue.bind(this);
     this.getRotationValue = this.getRotationValue.bind(this);
     this.state = {
@@ -58,6 +59,9 @@ class Pantalla3 extends Component {
     }
     return this.props.my.images[this.state.selected].rotation;
   }
+  handleDrop(index, file) {
+    alert('File: ' + file + ' Index: ' + index)
+  }
    render() {
      return (
        <div className="Pantalla3">
@@ -70,6 +74,7 @@ class Pantalla3 extends Component {
               selectedFrame={this.state.selected}
               onSelected={this.handleFrameSelected}
               onChange={this.handlePreviewChange}
+              onDrop={this.handleDrop}
             />
             <div className="zoom-y-rotacion">
               <label>Zoom</label>
