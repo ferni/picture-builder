@@ -14,7 +14,7 @@ const defaultStyle = {
 
 const boxTarget = {
   drop(props, monitor, component) {
-    component.props.onDrop(monitor.getItem().file);
+    component.props.onDrop(monitor.getItem().src);
   }
 };
 

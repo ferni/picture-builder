@@ -41,7 +41,9 @@ class Pantalla3 extends Component {
     this.props.onConfigChange(newConfig);
   }
   handleFrameSelected(index) {
-    this.setState({selected: index});
+    if (this.props.my.images[index]) {
+      this.setState({selected: index});
+    }
   }
   handlePreviewChange(imgConfigs) {
     let newConfig = Object.assign({}, this.props.my, {images: imgConfigs})
@@ -59,8 +61,24 @@ class Pantalla3 extends Component {
     }
     return this.props.my.images[this.state.selected].rotation;
   }
-  handleDrop(index, file) {
-    alert('File: ' + file + ' Index: ' + index)
+  handleDrop(index, src) {
+    let newImgConfigs = this.props.my.images.slice(0);
+    let selectedAux = this.state.selected;
+    //clear img cache
+    if (index == this.state.selected) {
+      this.setState({selected: -1});
+    }
+    newImgConfigs[index] = null;
+    this.props.onConfigChange(
+      Object.assign({}, this.props.my, {images: newImgConfigs})
+    );
+
+    //add new img
+    newImgConfigs[index] = {src, scale: 1.0, rotation: 0, x: 0, y: 0};
+    this.props.onConfigChange(
+      Object.assign({}, this.props.my, {images: newImgConfigs})
+    );
+    this.setState({selected: selectedAux});
   }
    render() {
      return (

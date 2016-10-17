@@ -1,10 +1,8 @@
 //Img implementation by andrewluetgers
 //https://gist.github.com/andrewluetgers/7c4a90cbe6341c401d0b7975a8ceeedb
 
-/* eslint-disable */
-
-import React, {Component} from 'react';
-import {Image} from 'react-konva';
+import React, { Component } from 'react';
+import { Image } from 'react-konva';
 
 function log(...args) {
 	//console.log(...args);
@@ -112,11 +110,10 @@ class Img extends Component {
 	getDims = (space, parent, child) => {
 		switch (space) {
 			case "fill":
-				return this.fillRect(parent, child); break;
-
+				return this.fillRect(parent, child);
 			case "fit":
 			default:
-				return this.fitRect(parent, child); break;
+				return this.fitRect(parent, child);
 		}
 	};
 

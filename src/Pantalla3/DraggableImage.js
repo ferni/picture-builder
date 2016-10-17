@@ -13,9 +13,9 @@ const style = {
 };
 
 const boxSource = {
-  beginDrag(props) {
+  beginDrag(props, monitor, component) {
     return {
-      file: props.file
+      src: component.refs.theImage.state.src
     };
   }
 };
@@ -36,10 +36,12 @@ export default class DraggableImage extends Component {
     const { name } = this.props;
     const opacity = isDragging ? 0.4 : 1;
 
+
     return (
       connectDragSource(
         <div style={{ ...style, opacity }}>
           <Image
+            ref="theImage"
             file={this.props.file}
             alt='Ten presionado el botón izquierdo del mouse y arrastra hacia el cuadro'
             width={this.props.width}

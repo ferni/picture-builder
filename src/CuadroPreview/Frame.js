@@ -45,7 +45,12 @@ class Frame extends Component {
                   draggable={true}
                   onDragend={this.props.onDragend}
                 /> :
-                <Img x={0} y={0} src={blank} draggable={false}/>
+                <Rect
+                  x={this.props.x}
+                  y={this.props.y}
+                  width={this.props.width}
+                  height={this.props.height}
+                />
               }
             </Group>
           </Layer>
