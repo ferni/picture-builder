@@ -48,8 +48,8 @@ export default class DropZone extends Component {
     return connectDropTarget(
       <div style={{ ...style, backgroundColor, display }}>
         {isActive ?
-          'Release to drop' :
-          'Drag a box here'
+          'Suelta para colocar' :
+          'Arrastra aquí'
         }
       </div>
     );
