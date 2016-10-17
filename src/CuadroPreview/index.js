@@ -17,6 +17,16 @@ class CuadroPreview extends Component {
     this.renderStyle = this.renderStyle.bind(this);
     this.handleDragend = this.handleDragend.bind(this);
   }
+  componentDidMount() {
+    this.handleDrop();
+  }
+  componentDidUpdate() {
+    this.handleDrop();
+  }
+  handleDrop() {
+    var images = document.querySelectorAll('.images div');
+    images.forEach(img => img.setAttribute("draggable", "true"));
+  }
   handleDragend(index, e) {
     let newImgConfigs = this.props.imgConfigs.slice(0);
     newImgConfigs[index].x = e.target.attrs.x;
@@ -45,9 +55,11 @@ class CuadroPreview extends Component {
   }
   render() {
     return (
-      <Stage width={460} height={400}>
-        {this.renderStyle('sarasa')}
-      </Stage>
+      <div className="CuadroPreview" onDrop={asdf => console.log('Dropped!')}>
+        <Stage width={460} height={400}>
+          {this.renderStyle('sarasa')}
+        </Stage>
+      </div>
     );
   }
 }
