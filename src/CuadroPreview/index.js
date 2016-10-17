@@ -1,6 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import Frame from './Frame.js';
 import {Stage} from 'react-konva';
+import DropZone from './DropZone';
 
 var styles = {
   sarasa: [
@@ -13,51 +14,12 @@ var styles = {
 
 import { DropTarget } from 'react-dnd';
 
-const style = {
-  height: '12rem',
-  width: '12rem',
-  marginRight: '1.5rem',
-  marginBottom: '1.5rem',
-  color: 'white',
-  padding: '1rem',
-  textAlign: 'center',
-  fontSize: '1rem',
-  lineHeight: 'normal',
-  float: 'left'
-};
 
-const boxTarget = {
-  drop() {
-    return { name: 'CuadroPreview' };
-  }
-};
-
-@DropTarget('img', boxTarget, (connect, monitor) => ({
-  connectDropTarget: connect.dropTarget(),
-  isOver: monitor.isOver(),
-  canDrop: monitor.canDrop()
-}))
 class CuadroPreview extends Component {
-  static propTypes = {
-    connectDropTarget: PropTypes.func.isRequired,
-    isOver: PropTypes.bool.isRequired,
-    canDrop: PropTypes.bool.isRequired
-  };
-
   constructor(props) {
     super(props);
     this.renderStyle = this.renderStyle.bind(this);
     this.handleDragend = this.handleDragend.bind(this);
-  }
-  componentDidMount() {
-    this.handleDrop();
-  }
-  componentDidUpdate() {
-    this.handleDrop();
-  }
-  handleDrop() {
-    var images = document.querySelectorAll('.images div');
-    images.forEach(img => img.setAttribute("draggable", "true"));
   }
   handleDragend(index, e) {
     let newImgConfigs = this.props.imgConfigs.slice(0);
@@ -85,15 +47,31 @@ class CuadroPreview extends Component {
       }
     );
   }
+  renderDropTargets(name) {
+    return styles[name].map((f) => {
+      let index = styles[name].indexOf(f);
+      return <DropZone
+        style={{
+          left: f.x + 'px',
+          top: f.y + 'px',
+          width: f.width + 'px',
+          height: f.height + 'px'
+        }}
+        key={index}
+        />
+      }
+    );
+  }
   render() {
     const { canDrop, isOver, connectDropTarget } = this.props;
     const isActive = canDrop && isOver;
 
-    return connectDropTarget(
+    return (
       <div className="CuadroPreview" style={{width: '100px', height: '100px'}}>
         <Stage width={460} height={400}>
           {this.renderStyle('sarasa')}
         </Stage>
+        {this.renderDropTargets('sarasa')}
       </div>
     );
   }
