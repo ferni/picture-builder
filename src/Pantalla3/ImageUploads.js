@@ -11,16 +11,6 @@ import DraggableImage from './DraggableImage.js';
        files: []
      };
    }
-   componentDidMount() {
-     this.updateImages();
-   }
-   componentDidUpdate() {
-     this.updateImages();
-   }
-   updateImages() {
-     var images = document.querySelectorAll('.images div');
-     images.forEach(img => img.setAttribute("draggable", "true"));
-   }
    addFiles(files) {
      console.log(files);
      var allFiles = this.state.files;
