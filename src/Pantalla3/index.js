@@ -6,6 +6,7 @@ import CuadroPreview from '../CuadroPreview';
 import Slider from 'material-ui/Slider';
 import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
+import FontIcon from 'material-ui/FontIcon';
 
 @DragDropContext(HTML5Backend)
 class Pantalla3 extends Component {
@@ -95,22 +96,39 @@ class Pantalla3 extends Component {
               onDrop={this.handleDrop}
             />
             <div className="zoom-y-rotacion">
-              <label>Zoom</label>
-              <Slider
-                style={{width: 200}}
-                value={this.getZoomValue()}
-                onChange={this.handleZoomChange}
-                disabled={this.state.selected === -1}
-              />
-              <label>Rotación</label>
-              <Slider
-                style={{width: 200}}
-                value={this.getRotationValue()}
-                onChange={this.handleRotationChange}
-                disabled={this.state.selected === -1}
-                max={360}
-                step={1}
-              />
+              <div className="slider-with-icon">
+                <FontIcon className="material-icons float-left" color="grey">
+                  zoom_out
+                </FontIcon>
+                <Slider
+                  className="float-left"
+                  style={{width: 330, marginTop: 0, marginBottom: 0}}
+                  value={this.getZoomValue()}
+                  onChange={this.handleZoomChange}
+                  disabled={this.state.selected === -1}
+                  step={0.05}
+                />
+                <FontIcon className="material-icons float-left" color="grey">
+                  zoom_in
+                </FontIcon>
+              </div>
+              <div className="slider-with-icon">
+                <FontIcon className="material-icons float-left" color="grey">
+                  rotate_left
+                </FontIcon>
+                <Slider
+                  className="float-left"
+                  style={{width: 330}}
+                  value={this.getRotationValue()}
+                  onChange={this.handleRotationChange}
+                  disabled={this.state.selected === -1}
+                  max={360}
+                  step={1}
+                />
+                <FontIcon className="material-icons float-left" color="grey">
+                  rotate_right
+                </FontIcon>
+              </div>
             </div>
           </div>
           <div className="right-col">
