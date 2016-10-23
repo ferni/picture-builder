@@ -138,7 +138,7 @@ class Img extends Component {
 				height={dims.height}
 				draggable={this.props.draggable}
 				rotation={this.props.rotation}
-				offset={this.props.offset}
+				offset={{x: imageDims.width / 2, y: imageDims.height / 2}}
 				scaleX={this.props.scale}
 				scaleY={this.props.scale}
 				onDragend={this.props.onDragend}
