@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import './ImageUploads.css';
-import { ImageUploadField,UploadField} from 'react-image-file';
 import DraggableImage from './DraggableImage.js';
+import ImportPicBtn from './ImportPicBtn';
+import dropboxImg from '../img/import/dropbox.png';
+import facebookImg from '../img/import/facebook.png';
+import flickrImg from '../img/import/flickr.png';
+import instagramImg from '../img/import/instagram.png';
+import uploadImg from '../img/import/upload.png';
+import UploadButton from './UploadButton';
 
  class ImageUploads extends Component {
    constructor(...args) {
@@ -26,16 +32,14 @@ import DraggableImage from './DraggableImage.js';
      );
      return (
        <div className="ImageUploads">
+       <UploadButton
+          className="uploadImages"
+           label='upload images'
+           onChange={this.addFiles}
+       />
         <div className="images">
           {images}
         </div>
-        <ImageUploadField
-            label='upload images'
-            imageWidth={50}
-            imageHeight={50}
-            multiple
-            onChange={this.addFiles}
-        />
        </div>
      );
 
