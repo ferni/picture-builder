@@ -1,7 +1,8 @@
 
 
 import React, { Component } from 'react';
-//import './UploadButton.css';
+import './UploadButton.css';
+import uploadImg from '../img/import/upload.png';
 
  class UploadButton extends Component {
    constructor(...args) {
@@ -15,13 +16,21 @@ import React, { Component } from 'react';
    render() {
      return (
        <div className="UploadButton">
-         {React.createElement('input', {
-           type: 'file',
-           name: 'Subir imagenes',
-           accept: 'image/*',
-           onChange: this.handleChange,
-           multiple: true
-         })}
+         <label htmlFor="file" style={{
+           backgroundImage: 'url(' + uploadImg + ')'
+         }}>
+           Subir Fotos
+         </label>
+         <input
+            id='file'
+            type='file'
+            name='file'
+            accept='image/*'
+            onChange={this.handleChange}
+            multiple={true}
+            className="inputFile"
+        />
+
        </div>
      );
    }

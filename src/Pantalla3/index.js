@@ -106,7 +106,7 @@ class Pantalla3 extends Component {
                   value={this.getZoomValue()}
                   onChange={this.handleZoomChange}
                   disabled={this.state.selected === -1}
-                  step={0.05}
+                  step={0.02}
                 />
                 <FontIcon className="material-icons float-left" color="grey">
                   zoom_in

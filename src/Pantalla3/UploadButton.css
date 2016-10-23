@@ -1,0 +1,26 @@
+.UploadButton .inputFile{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.UploadButton label {
+    font-size: 1.25em;
+    color: white;
+    background-color: black;
+    height: 115px;
+    width: 80px;
+    display: table-cell;
+    vertical-align: bottom;
+    background-repeat: no-repeat;
+    background-position: 6px 13px;
+    cursor: pointer;
+}
+
+.UploadButton:focus  label,
+.UploadButton label:hover {
+    background-color: red;
+}
