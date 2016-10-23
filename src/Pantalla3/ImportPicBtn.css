@@ -1,0 +1,11 @@
+.ImportPicBtn {
+  text-align: center;
+  height: 115px;
+  width: 80px;
+  border: 1px solid lightgray;
+}
+
+.ImportPicBtn img {
+  margin-top: 13px;
+  margin-bottom: 13px;
+}

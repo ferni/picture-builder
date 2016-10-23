@@ -32,11 +32,11 @@ import UploadButton from './UploadButton';
      );
      return (
        <div className="ImageUploads">
-       <UploadButton
-          className="uploadImages"
-           label='upload images'
-           onChange={this.addFiles}
-       />
+       <UploadButton onChange={this.addFiles} />
+       <ImportPicBtn iconSrc={facebookImg} label="Facebook" />
+       <ImportPicBtn iconSrc={instagramImg} label="Instagram" />
+       <ImportPicBtn iconSrc={dropboxImg} label="Dropbox" />
+       <ImportPicBtn iconSrc={flickrImg} label="Flickr" />
         <div className="images">
           {images}
         </div>
