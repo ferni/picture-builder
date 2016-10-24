@@ -3,14 +3,7 @@ import Frame from './Frame.js';
 import {Stage} from 'react-konva';
 import DropZone from './DropZone';
 
-var styles = {
-  sarasa: [
-    {x: 10, y: 10, width: 150, height: 150},
-    {x: 170, y: 10, width: 150, height: 150},
-    {x: 10, y: 170, width: 150, height: 150},
-    {x: 170, y: 170, width: 150, height: 150}
-  ]
-}
+import cuadros from '../cuadros';
 
 import { DropTarget } from 'react-dnd';
 
@@ -30,8 +23,8 @@ class CuadroPreview extends Component {
   }
   renderStyle(name) {
     let self = this;
-    return styles[name].map((f) => {
-      let index = styles[name].indexOf(f);
+    return cuadros[name].map((f) => {
+      let index = cuadros[name].indexOf(f);
       return <Frame
         x={f.x}
         y={f.y}
@@ -51,14 +44,15 @@ class CuadroPreview extends Component {
     if (!this.props.enableImages) {
       return null;
     }
-    return styles[name].map((f) => {
-      let index = styles[name].indexOf(f);
+    var domPxRatio = 4 / 5;//for some reason dom px is different from konva px (some scaling thing?)
+    return cuadros[name].map((f) => {
+      let index = cuadros[name].indexOf(f);
       return <DropZone
         style={{
           left: f.x + 'px',
           top: f.y + 'px',
-          width: f.width + 'px',
-          height: f.height + 'px'
+          width: (f.width * domPxRatio) + 'px',
+          height: (f.height * domPxRatio) + 'px'
         }}
         key={index}
         onDrop={this.props.onDrop.bind(this, index)}
@@ -73,9 +67,9 @@ class CuadroPreview extends Component {
     return (
       <div className="CuadroPreview" style={{width: '100px', height: '100px'}}>
         <Stage width={460} height={400}>
-          {this.renderStyle('sarasa')}
+          {this.renderStyle(this.props.config.style)}
         </Stage>
-        {this.renderDropTargets('sarasa')}
+        {this.renderDropTargets(this.props.config.style)}
       </div>
     );
   }
