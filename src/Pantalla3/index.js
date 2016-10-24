@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './Pantalla3.css';
 import ImageUploads from './ImageUploads.js';
-import NavButtons from '../NavButtons';
+import BackBtn from '../NavButtons/BackBtn';
+import ForwardBtn from '../NavButtons/ForwardBtn';
 import CuadroPreview from '../CuadroPreview';
 import Slider from 'material-ui/Slider';
 import { DragDropContext } from 'react-dnd';
@@ -134,12 +135,10 @@ class Pantalla3 extends Component {
           </div>
           <div className="right-col">
             <ImageUploads />
-            <NavButtons
-              back="Cambiar estilo"
-              forward="Elegir efectos"
-              onGoTo={this.props.onGoTo}
-              currentScreen={3}
-            />
+            <div className="NavButtons navigation-buttons">
+              <BackBtn desc="Cambiar estilo" onClick={this.props.onGoTo.bind(null, 2)}/>
+              <ForwardBtn desc="Elegir efectos" onClick={()=>{}}/>
+            </div>
           </div>
        </div>
      );
