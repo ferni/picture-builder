@@ -16,11 +16,10 @@ class Frame extends Component {
             y={this.props.y}
             width={this.props.width}
             height={this.props.height}
-            shadowColor='black'
-            shadowBlur={5}
+            shadowColor={this.props.selected ? 'green' : 'black'}
+            shadowBlur={this.props.selected ? 8 : 5}
             shadowOffset={{x : 2, y : 2}}
-            shadowOpacity={0.8}
-            stroke={this.props.selected ? 'blue' : 'black'}
+            shadowOpacity={this.props.selected ? 1.0 : 0.8}
             fill="white"
             onClick={this.props.onClick}
           />
