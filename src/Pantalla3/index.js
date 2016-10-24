@@ -53,7 +53,7 @@ class Pantalla3 extends Component {
   }
   getZoomValue() {
     if (this.state.selected === -1) {
-      return 0;
+      return 0.1;
     }
     return this.props.my.images[this.state.selected].scale;
   }
