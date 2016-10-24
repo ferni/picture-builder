@@ -34,7 +34,15 @@ class Frame extends Component {
               }}
               onClick={this.props.onClick}
             >
-
+              <Img
+                x={130}
+                y={109}
+                height={this.props.height}
+                src={blank}
+                scale={1.0}
+                rotation={0}
+                draggable={false}
+              />
               {this.props.imgConfig ?
                 <Img
                   x={this.props.imgConfig.x}
