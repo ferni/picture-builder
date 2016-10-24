@@ -21,6 +21,7 @@ class Frame extends Component {
             shadowOffset={{x : 2, y : 2}}
             shadowOpacity={0.8}
             stroke={this.props.selected ? 'blue' : 'black'}
+            fill="white"
             onClick={this.props.onClick}
           />
             <Group
