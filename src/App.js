@@ -27,12 +27,7 @@ class App extends Component {
       */
       pictureConfig: {
         style: styles.singlePrint,
-        images: [
-          null,
-          {src: aluminiumImg, scale:1.5, rotation:0, x:-50, y:20},
-          {src: aluminiumImg, scale:0.5, rotation:1.5, x:10, y:20},
-          {src: aluminiumImg, scale:0.2, rotation:5, x:10, y:20}
-        ],
+        images: [],
         effects: []
       }
     };
