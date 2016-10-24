@@ -53,12 +53,7 @@ class Frame extends Component {
                   draggable={true}
                   onDragend={this.props.onDragend}
                 /> :
-                <Rect
-                  x={this.props.x}
-                  y={this.props.y}
-                  width={this.props.width}
-                  height={this.props.height}
-                />
+                null
               }
             </Group>
           </Layer>
