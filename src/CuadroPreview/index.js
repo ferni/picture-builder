@@ -48,6 +48,9 @@ class CuadroPreview extends Component {
     );
   }
   renderDropTargets(name) {
+    if (!this.props.enableImages) {
+      return null;
+    }
     return styles[name].map((f) => {
       let index = styles[name].indexOf(f);
       return <DropZone
