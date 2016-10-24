@@ -17,3 +17,20 @@
 .Pantalla3 .float-left {
   float: left;
 }
+
+.Pantalla3 h4 {
+  margin: 5px;
+  text-align: left;
+}
+
+.Pantalla3 .images {
+  margin-top: 20px;
+  border: 1px solid lightgray;
+  padding: 10px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.Pantalla3 .import-buttons {
+  height: 117px;
+}

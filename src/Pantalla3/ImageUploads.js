@@ -28,18 +28,22 @@ import UploadButton from './UploadButton';
    }
    render() {
      var images = this.state.files.map(file =>
-       <DraggableImage file={file} width={100} height={100} />
+       <DraggableImage file={file} width={85} height={85} />
      );
      return (
        <div className="ImageUploads">
-       <UploadButton onChange={this.addFiles} />
-       <ImportPicBtn iconSrc={facebookImg} label="Facebook" />
-       <ImportPicBtn iconSrc={instagramImg} label="Instagram" />
-       <ImportPicBtn iconSrc={dropboxImg} label="Dropbox" />
-       <ImportPicBtn iconSrc={flickrImg} label="Flickr" />
-        <div className="images">
-          {images}
-        </div>
+         <h4>Elegí tus fotos</h4>
+         <hr/>
+         <div className="import-buttons">
+           <UploadButton onChange={this.addFiles} />
+           <ImportPicBtn iconSrc={facebookImg} label="Facebook" />
+           <ImportPicBtn iconSrc={instagramImg} label="Instagram" />
+           <ImportPicBtn iconSrc={dropboxImg} label="Dropbox" />
+           <ImportPicBtn iconSrc={flickrImg} label="Flickr" />
+         </div>
+          <div className="images">
+            {images}
+          </div>
        </div>
      );
 
