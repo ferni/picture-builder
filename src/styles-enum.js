@@ -1,5 +1,5 @@
 export default {
-  singlePrint: 'Single print',
-  splitImage: 'Split image',
-  collages: 'Collages'
+  singlePrint: 'Simple',
+  splitImage: 'Múltiple',
+  collages: 'Collage'
 };
