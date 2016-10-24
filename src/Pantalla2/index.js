@@ -52,7 +52,7 @@ class Pantalla2 extends Component {
     return (
       <div className="Pantalla2">
         <div className="left-col">
-          <h3>{this.props.my.material} {this.props.my.style}: {this.props.my.shape} {this.props.my.size}</h3>
+          <h3>{this.props.my.material} {this.props.my.style} {this.props.my.shape} {this.props.my.size}</h3>
           <CuadroPreview config={this.props.my} enableImages={false} enableEffects={false}/>
         </div>
         <div className="right-col">

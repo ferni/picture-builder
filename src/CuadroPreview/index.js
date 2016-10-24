@@ -65,7 +65,12 @@ class CuadroPreview extends Component {
     const isActive = canDrop && isOver;
 
     return (
-      <div className="CuadroPreview" style={{width: '100px', height: '100px', marginLeft: '30px'}}>
+      <div className="CuadroPreview" style={{
+        width: '100px',
+        height: '100px',
+        marginLeft: '30px',
+        position: 'relative'
+      }}>
         <Stage width={460} height={400}>
           {this.renderStyle(this.props.config.style)}
         </Stage>
