@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './NavBtn.css';
+import './ForwardBtn.css';
 
  class ForwardBtn extends Component {
    render() {

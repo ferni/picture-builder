@@ -1,0 +1,13 @@
+Botón (que se llena)
+
+vacío: #5CC0CB
+lleno: #337ab7
+
+Botón Rosa
+
+#E7316E
+
+
+
+Un azulcito piola (mío): #437cc3
+mas oscuro: #2c70c5

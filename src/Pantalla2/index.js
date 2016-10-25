@@ -10,6 +10,9 @@ import multiple from'../img/multiple.png';
 import collage from'../img/collage.png';
 import styles from '../styles-enum.js';
 
+import nextIcon from '../img/icon-btn.png';
+import singleImg from '../img/simple.png';
+
 class Pantalla2 extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +30,7 @@ class Pantalla2 extends Component {
           <h4>2. Elije forma y tamaño</h4>
           <hr/>
           <Dropdown>
-            <SizeAndShape imgSrc="tu-vieja" tamaño="30 x 45" precio={170}
+            <SizeAndShape imgSrc={singleImg} tamaño="30 x 45" precio={170}
               promoPorc={70} promoAhorro={396.9}/>
           </Dropdown>
         </div>
@@ -38,7 +41,7 @@ class Pantalla2 extends Component {
           <h4>2. Elije la forma</h4>
           <hr/>
           <Dropdown>
-            <Shape imgSrc="tu-hermana" nombre="asdf"/>
+            <Shape imgSrc={singleImg} nombre="Forma"/>
           </Dropdown>
           <h4>3. Elije el tamaño</h4>
           <hr/>
@@ -73,6 +76,7 @@ class Pantalla2 extends Component {
           <NavButtons
             back="Cambiar material"
             forward="Subir fotos"
+            //icon={nextIcon}
             onGoTo={this.props.onGoTo}
             currentScreen={2}
           />

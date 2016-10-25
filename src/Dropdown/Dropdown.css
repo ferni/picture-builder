@@ -1,15 +1,23 @@
 .Dropdown {
-  border: 1px solid gray;
+  border: 1px solid #bbb;
   position: relative;
   min-height: 60px;
 }
 
 .Dropdown .flechita{
-  background-color: blue;
+  background-color: #E7316E;
   color: white;
-  width: 70px;
-  height: 100%;
+  width: 66px;
+  height: 95%;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 2px;
+  top: 2px;
+}
+
+.Dropdown img {
+  width: 50px;
+  margin-top: 15px;
+}
+.Dropdown .Shape img {
+  margin-top: -5px;
 }
