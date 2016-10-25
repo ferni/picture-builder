@@ -6,6 +6,7 @@
   position: relative;
   font-family: 'Raleway', sans-serif;
   color: #555555;
+  margin-top: 55px;
 }
 
 .seleccionable {
@@ -34,9 +35,10 @@
 
 .left-col {
   width: 460px;
-  float: left
+  float: left;
 }
 .right-col {
+  margin-left: 28px;
   width: 450px;
-  float: left
+  float: left;
 }
