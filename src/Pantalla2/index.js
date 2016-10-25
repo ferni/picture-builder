@@ -23,7 +23,7 @@ class Pantalla2 extends Component {
     var sizeAndShape;
     if (this.props.my.style !== styles.collages) {
       sizeAndShape = (
-        <div>
+        <div style={{marginTop: 60}} >
           <h4>2. Elije forma y tamaño</h4>
           <hr/>
           <Dropdown>
@@ -56,7 +56,7 @@ class Pantalla2 extends Component {
           <CuadroPreview config={this.props.my} enableImages={false} enableEffects={false}/>
         </div>
         <div className="right-col">
-          <h4>1. Elije el estilo de cuadro</h4>
+          <h4 style={{marginTop: 20}}>1. Elije el estilo de cuadro</h4>
           <hr/>
           <div className="estilos">
             <BotonEstilo selected={this.props.my.style === styles.singlePrint}
