@@ -1,14 +1,12 @@
 .NavBtn {
   width: 180px;
+  height: 45px;
   float: left;
   margin: 4px 20px;
   cursor: pointer;
   -webkit-transition: background-color 0.4s;
   transition: background-color 0.4s;
-}
-
-.NavBtn div {
-  display: inline;
+  position: relative;
 }
 
 .NavBtn strong {
@@ -17,4 +15,9 @@
 
 .NavBtn span {
   font-size: 0.9em;
+}
+
+.NavBtn .texto {
+  width: 150px;
+  height: 45px;
 }

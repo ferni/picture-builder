@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './NavBtn.css';
 import './ForwardBtn.css';
+import FontIcon from 'material-ui/FontIcon';
 
  class ForwardBtn extends Component {
    render() {
@@ -11,7 +12,15 @@ import './ForwardBtn.css';
           <strong>Continuar</strong><br/>
           <span className="descripcion">{this.props.desc}</span>
         </div>
-        <div className="flechita-adelante"> &gt; </div>
+        <div className="flechita-adelante">
+          <FontIcon className="material-icons" color="white" style={{
+            fontSize: '40px',
+            marginTop: '3px',
+            color: 'white'
+          }}>
+            keyboard_arrow_right
+          </FontIcon>
+        </div>
        </div>
      );
    }

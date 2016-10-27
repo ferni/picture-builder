@@ -8,3 +8,15 @@
 .ForwardBtn:hover {
   background-color: #FF73A2;
 }
+
+.ForwardBtn .flechita-adelante {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.ForwardBtn .texto {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+}
