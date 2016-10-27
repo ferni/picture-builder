@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BackBtn from './BackBtn.js';
 import ForwardBtn from './ForwardBtn.js';
+import './NavButtons.css';
 
  class NavButtons extends Component {
    render() {

@@ -1,8 +1,8 @@
 .ForwardBtn {
   background-color: #E7316E;
   color: white;
-  -webkit-transition: background-color 0.5s;
-  transition: background-color 0.5s;
+  width: 190px;
+  margin-left: 35px;
 }
 
 .ForwardBtn:hover {

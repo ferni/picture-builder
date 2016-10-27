@@ -1,5 +1,7 @@
 .BackBtn {
   background-color: white;
+  width: 170px;
+  margin-left: 20px;
 }
 
 .BackBtn:hover {
