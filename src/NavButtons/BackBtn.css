@@ -1,0 +1,8 @@
+.BackBtn {
+  background-color: white;
+  color: black;
+}
+
+.BackBtn:hover {
+  background-color: #CCD6E0;
+}

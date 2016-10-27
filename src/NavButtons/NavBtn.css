@@ -1,8 +1,10 @@
 .NavBtn {
-  border: 1px solid #bbb;
   width: 180px;
   float: left;
   margin: 4px 20px;
+  cursor: pointer;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
 }
 
 .NavBtn div {

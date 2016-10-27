@@ -1,0 +1,10 @@
+.ForwardBtn {
+  background-color: #E7316E;
+  color: white;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.ForwardBtn:hover {
+  background-color: #FF73A2;
+}
