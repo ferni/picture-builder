@@ -41,7 +41,7 @@ class CuadroPreview extends Component {
     );
   }
   renderDropTargets(name) {
-    if (!this.props.enableImages) {
+    if (!this.props.enableImages || this.props.enableEffects) {
       return null;
     }
     var domPxRatio = 4 / 5;//for some reason dom px is different from konva px (some scaling thing?)

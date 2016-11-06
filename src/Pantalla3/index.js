@@ -138,7 +138,7 @@ class Pantalla3 extends Component {
             <ImageUploads />
             <div className="NavButtons navigation-buttons">
               <BackBtn desc="Cambiar estilo" onClick={this.props.onGoTo.bind(null, 2)}/>
-              <ForwardBtn desc="Elegir efectos" onClick={()=>{}}/>
+              <ForwardBtn desc="Elegir efectos" onClick={this.props.onGoTo.bind(null, 4)}/>
             </div>
           </div>
        </div>
