@@ -16,7 +16,8 @@ class Pantalla3 extends Component {
     this.handleZoomChange = this.handleZoomChange.bind(this);
     this.handleRotationChange = this.handleRotationChange.bind(this);
     this.handleFrameSelected = this.handleFrameSelected.bind(this);
-    this.handlePreviewChange = this.handlePreviewChange.bind(this);
+    this.updateImgConfig = this.updateImgConfig.bind(this);
+    this.updateSelectedImage = this.updateSelectedImage.bind(this);
     this.handleDrop = this.handleDrop.bind(this);
     this.getZoomValue = this.getZoomValue.bind(this);
     this.getRotationValue = this.getRotationValue.bind(this);
@@ -24,32 +25,29 @@ class Pantalla3 extends Component {
       selected: -1
     };
   }
-  handleZoomChange(e, value) {
+  updateImgConfig(imgConfig) {
+    this.props.onConfigChange(
+      Object.assign({}, this.props.my, {images: imgConfig})
+    );
+  }
+  updateSelectedImage(props) {
     if (this.state.selected === -1) {
       return;
     }
     let newImgConfigs = this.props.my.images.slice(0);
-    newImgConfigs[this.state.selected].scale = value;
-    let newConfig = Object.assign({}, this.props.my, {images: newImgConfigs})
-    this.props.onConfigChange(newConfig);
+    Object.assign(newImgConfigs[this.state.selected], props);
+    this.updateImgConfig(newImgConfigs);
+  }
+  handleZoomChange(e, value) {
+    this.updateSelectedImage({scale: value});
   }
   handleRotationChange(e, value) {
-    if (this.state.selected === -1) {
-      return;
-    }
-    let newImgConfigs = this.props.my.images.slice(0);
-    newImgConfigs[this.state.selected].rotation = value;
-    let newConfig = Object.assign({}, this.props.my, {images: newImgConfigs})
-    this.props.onConfigChange(newConfig);
+    this.updateSelectedImage({rotation: value});
   }
   handleFrameSelected(index) {
     if (this.props.my.images[index]) {
       this.setState({selected: index});
     }
-  }
-  handlePreviewChange(imgConfigs) {
-    let newConfig = Object.assign({}, this.props.my, {images: imgConfigs})
-    this.props.onConfigChange(newConfig);
   }
   getZoomValue() {
     if (this.state.selected === -1) {
@@ -94,7 +92,7 @@ class Pantalla3 extends Component {
               enableEffects={false}
               selectedFrame={this.state.selected}
               onSelected={this.handleFrameSelected}
-              onChange={this.handlePreviewChange}
+              onChange={this.updateImgConfig}
               onDrop={this.handleDrop}
             />
             <div className="zoom-y-rotacion">
