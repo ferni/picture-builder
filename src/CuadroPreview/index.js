@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import Frame from './Frame.js';
-import {Stage} from 'react-konva';
+import {Stage, Rect, Layer} from 'react-konva';
 import DropZone from './DropZone';
 
 import cuadros from '../cuadros';
@@ -11,7 +11,8 @@ import { DropTarget } from 'react-dnd';
 class CuadroPreview extends Component {
   constructor(props) {
     super(props);
-    this.renderStyle = this.renderStyle.bind(this);
+    this.renderBackground = this.renderBackground.bind(this);
+    this.renderImages = this.renderImages.bind(this);
     this.handleDragend = this.handleDragend.bind(this);
   }
   handleDragend(index, e) {
@@ -21,9 +22,34 @@ class CuadroPreview extends Component {
     this.props.onSelected(index);
     this.props.onChange(newImgConfigs);
   }
-  renderStyle(name) {
+  renderBackground(style) {
     let self = this;
-    return cuadros[name].map((f) => {
+    var backRects = cuadros[style].map((f) => {
+      let index = cuadros[style].indexOf(f);
+      let isSelected = self.props.selectedFrame === index;
+      return <Rect
+        x={f.x}
+        y={f.y}
+        width={f.width}
+        height={f.height}
+        shadowColor={isSelected ? 'green' : 'black'}
+        shadowBlur={isSelected ? 8 : 5}
+        shadowOffset={{x : 2, y : 2}}
+        shadowOpacity={isSelected ? 1.0 : 0.8}
+        fill="white"
+        onClick={self.props.onSelected ? self.props.onSelected.bind(self, index) : function(){}}
+      />
+      }
+    );
+    return (
+      <Layer>
+        {backRects}
+      </Layer>
+    );
+  }
+  renderImages(name) {
+    let self = this;
+    let images = cuadros[name].map((f) => {
       let index = cuadros[name].indexOf(f);
       return <Frame
         x={f.x}
@@ -34,10 +60,15 @@ class CuadroPreview extends Component {
         imgConfig={self.props.enableImages ?
           this.props.imgConfigs[index] : null}
         selected={self.props.selectedFrame === index}
-        onClick={self.props.onSelected ? self.props.onSelected.bind(this, index) : function(){}}
+        onClick={self.props.onSelected ? self.props.onSelected.bind(self, index) : function(){}}
         key={index}
         />
       }
+    );
+    return (
+      <Layer>
+        {images}
+      </Layer>
     );
   }
   renderDropTargets(name) {
@@ -72,7 +103,8 @@ class CuadroPreview extends Component {
         position: 'relative'
       }}>
         <Stage width={460} height={400}>
-          {this.renderStyle(this.props.config.style)}
+          {this.renderBackground(this.props.config.style)}
+          {this.renderImages(this.props.config.style)}
         </Stage>
         {this.renderDropTargets(this.props.config.style)}
       </div>
